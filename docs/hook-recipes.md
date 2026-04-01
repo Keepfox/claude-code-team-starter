@@ -18,6 +18,7 @@ The recipes are for the next layer:
 - teams that want stronger post-edit reminders
 - repos that need more startup context
 - teams that want a cleaner stop condition during merge work
+- stacks that need language-specific verification reminders
 
 ## Included recipes
 
@@ -67,6 +68,87 @@ Suggested config:
           {
             "type": "command",
             "command": "node .claude/hooks/recipes/posttool-quality-context.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `posttool-node-quality-context.mjs`
+
+Use when:
+
+- the repo is primarily Node.js or TypeScript
+- you want post-edit reminders to mention lint, test, and typecheck scripts directly
+
+Suggested config:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/recipes/posttool-node-quality-context.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `posttool-python-quality-context.mjs`
+
+Use when:
+
+- the repo is primarily Python
+- you want reminders around `pytest`, formatter or linter discipline, and explicit dependency changes
+
+Suggested config:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/recipes/posttool-python-quality-context.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `posttool-go-quality-context.mjs`
+
+Use when:
+
+- the repo is primarily Go
+- you want reminders around narrow `go test` targets, formatting, and API stability
+
+Suggested config:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/recipes/posttool-go-quality-context.mjs"
           }
         ]
       }
@@ -152,3 +234,13 @@ Avoid:
 - slow hooks
 - large repo scans on every edit
 - hooks that silently change behavior in ways the team cannot review
+
+## Good pairing pattern
+
+For a stack-specific repo:
+
+- use `examples/<stack>/CLAUDE.md` as the short memory baseline
+- enable one stack-specific post-edit recipe
+- add the matching skill from `.claude/skills/`
+
+This keeps the workflow explicit without turning the project starter into a hidden framework.

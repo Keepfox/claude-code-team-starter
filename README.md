@@ -256,8 +256,11 @@ These are project-level agents, so your team can share a common workflow without
 ## Included Skills
 
 - `release-checklist`
+- `node-change-checklist`
+- `python-change-checklist`
+- `go-change-checklist`
 
-This is a small example of a shared team skill. Use it as a pattern for stack-specific or team-specific reusable guidance.
+These are small reusable skill examples. Use them as patterns for stack-specific or team-specific guidance.
 
 ## Safety Defaults
 

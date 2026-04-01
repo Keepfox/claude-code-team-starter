@@ -12,6 +12,12 @@ Included recipes:
   Ask before editing deployment, infrastructure, or workflow files.
 - `posttool-quality-context.mjs`
   Remind Claude to run the smallest relevant test or lint command after source edits.
+- `posttool-node-quality-context.mjs`
+  Add Node.js and TypeScript-specific verification reminders after edits.
+- `posttool-python-quality-context.mjs`
+  Add Python-specific verification reminders after edits.
+- `posttool-go-quality-context.mjs`
+  Add Go-specific verification reminders after edits.
 - `sessionstart-project-brief.mjs`
   Load extra startup context from `.claude/project-brief.md` when that file exists.
 - `stop-clean-merge-state.mjs`

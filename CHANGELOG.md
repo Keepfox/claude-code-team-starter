@@ -7,6 +7,7 @@
 - added bundle presets and installer support for common team shapes
 - added hook recipe library for safer repo-specific automation
 - added install and first-run terminal demo assets for README and onboarding docs
+- added stack-specific skills and hook recipes for Node, Python, and Go repositories
 
 ## 0.2.0
 

@@ -8,6 +8,12 @@ Included examples:
 - `python/CLAUDE.md`
 - `go/CLAUDE.md`
 
+Suggested companions:
+
+- `node` example plus `.claude/skills/node-change-checklist/` and `posttool-node-quality-context.mjs`
+- `python` example plus `.claude/skills/python-change-checklist/` and `posttool-python-quality-context.mjs`
+- `go` example plus `.claude/skills/go-change-checklist/` and `posttool-go-quality-context.mjs`
+
 Use them in one of two ways:
 
 ## Option 1: Copy a starting point
