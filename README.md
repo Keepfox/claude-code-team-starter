@@ -62,6 +62,12 @@ cp CLAUDE.md /path/to/your-project/
 cp .mcp.json /path/to/your-project/
 ```
 
+Or install it with the helper script:
+
+```bash
+node scripts/install.mjs /path/to/your-project
+```
+
 3. Open your project and start Claude Code.
 
 ```bash
@@ -75,6 +81,22 @@ claude
 - Run `/agents` to see the project subagents
 - Run `/mcp` to inspect MCP connections
 - Open `.claude/settings.json` and adjust permissions for your stack
+
+## Variant Packs
+
+This starter also includes overlay variants for common working styles:
+
+- `backend`
+- `consulting`
+- `support-triage`
+
+Apply a variant during install:
+
+```bash
+node scripts/install.mjs /path/to/your-project --variant backend
+```
+
+See [docs/variants.md](docs/variants.md) for details.
 
 ## Included Commands
 
@@ -184,6 +206,7 @@ Start here:
 - [docs/adoption-playbook.md](docs/adoption-playbook.md)
 - [docs/publish.md](docs/publish.md)
 - [docs/use-cases.md](docs/use-cases.md)
+- [docs/variants.md](docs/variants.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Legal Note
