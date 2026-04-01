@@ -182,6 +182,7 @@ Start here:
 - [docs/customize.md](docs/customize.md)
 - [docs/public-launch-checklist.md](docs/public-launch-checklist.md)
 - [docs/adoption-playbook.md](docs/adoption-playbook.md)
+- [docs/publish.md](docs/publish.md)
 - [docs/use-cases.md](docs/use-cases.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 
