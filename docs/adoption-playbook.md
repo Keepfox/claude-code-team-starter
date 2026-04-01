@@ -61,9 +61,9 @@ Once the baseline works, create focused variants:
 - web app starter
 - backend starter
 - data or analytics starter
+- release engineering starter
 - security review starter
 - support triage starter
-- release engineering starter
 
 Each variant should stay small and opinionated.
 

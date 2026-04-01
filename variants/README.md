@@ -31,6 +31,11 @@ You can combine variants during install. If two variants write the same path, th
 - command: `/check-ui`
 - focus: UI quality, states, accessibility, user-visible changes
 
+### `release-engineering`
+
+- command: `/release-readiness`
+- focus: rollout steps, rollback safety, monitoring, operational risk
+
 ### `security`
 
 - command: `/threat-model`

@@ -112,3 +112,17 @@ Best extensions:
 - the `security` variant
 - GitHub and docs MCP
 - error tracking MCP for incident review
+
+## 9. Release engineering or delivery team
+
+Use this starter to standardize:
+
+- release-readiness reviews
+- rollout and rollback notes
+- migration and feature-flag coordination
+- post-release monitoring expectations
+
+Best extensions:
+
+- the `release-engineering` variant
+- GitHub, docs, errors, and deploy control MCP

@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "${GITHUB_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_MCP_TOKEN}"
+      }
+    },
+    "docs": {
+      "type": "http",
+      "url": "${DOCS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DOCS_MCP_TOKEN}"
+      }
+    },
+    "errors": {
+      "type": "http",
+      "url": "${ERRORS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${ERRORS_MCP_TOKEN}"
+      }
+    },
+    "deploys": {
+      "type": "http",
+      "url": "${DEPLOYS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DEPLOYS_MCP_TOKEN}"
+      }
+    }
+  }
+}

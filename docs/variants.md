@@ -78,6 +78,20 @@ Adds:
 - data-oriented `CLAUDE.md`
 - `/check-data` command
 
+### `release-engineering`
+
+Best for:
+
+- release managers
+- platform teams handling rollouts
+- services with careful migration or flag coordination
+- teams that want explicit release-readiness reviews
+
+Adds:
+
+- release-engineering-oriented `CLAUDE.md`
+- `/release-readiness` command
+
 ### `security`
 
 Best for:
