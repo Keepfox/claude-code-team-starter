@@ -92,6 +92,13 @@ Show supported bundles:
 node scripts/install.mjs --list-bundles
 ```
 
+Describe bundles with variants, MCP profiles, examples, skills, and hook recipes:
+
+```bash
+npm run describe-bundles
+node scripts/install.mjs --describe-bundles --bundle product-web
+```
+
 Show script help:
 
 ```bash
@@ -138,9 +145,13 @@ If you want the full first-week flow, use [docs/onboarding.md](onboarding.md).
 
 If your team shape is already clear, start from [docs/bundles.md](bundles.md) before choosing variants one by one.
 
+If your team shape is clear but you want the shortest path to the right preset, use [docs/bundle-selector.md](bundle-selector.md).
+
+If you want copy-paste starter paths instead of a matrix, use [docs/examples-gallery.md](examples-gallery.md).
+
 If the repo is clearly Node, Python, or Go, prefer one of the stack-aware bundles so the installer also points you to the matching example, skills, and hook recipes.
 
-For `data-python` and `admin-console`, the installer now also points you to the matching MCP example profile.
+For `product-web`, `data-python`, and `admin-console`, the installer now also points you to the matching MCP example profile.
 
 ## Recommended first edits
 

@@ -28,12 +28,17 @@ Use this starter to share:
 Good first MCP additions:
 
 - GitHub
-- Postgres
+- errors
 - docs search
+- product analytics
 
 Recommended bundle:
 
 - `product-web`
+
+Matching MCP profile:
+
+- `mcp/examples/product-web.json`
 
 Suggested reusable layer:
 
@@ -87,6 +92,10 @@ Best extension:
 Recommended bundle:
 
 - `product-web`
+
+Matching MCP profile:
+
+- `mcp/examples/product-web.json`
 
 Suggested reusable layer:
 

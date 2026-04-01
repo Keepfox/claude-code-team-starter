@@ -1,19 +1,24 @@
 # Roadmap
 
-## Near-term
+## Current status
 
-- add more stack-specific skills and hooks on top of the starter base
-- expand terminal captures and walkthrough GIFs for install and first-run flows
-- turn the capability matrix into even stronger copy-paste bundles and starter presets
-- expand the first bundle set with more team shapes and stronger MCP plus stack guidance
-- expand the hook recipe library with more stack-specific examples beyond Node, Python, and Go
+The core starter scope is complete.
 
-## Mid-term
+The repo now ships:
 
-- add repo templates for common stack combinations
-- add a small docs site or examples gallery
-- add more deterministic safety hooks with clear opt-in behavior
-- add richer starter diagnostics for permissions, MCP reachability, and local setup drift
+- shared Claude Code settings, commands, agents, hooks, and skills
+- scenario variants and named bundle presets
+- scenario-based MCP profiles
+- stack-specific and workflow-specific reusable layers
+- onboarding, install, rollout, and gallery docs
+- validation and release cadence
+
+## Maintenance priorities
+
+- keep bundle manifests, MCP examples, and docs aligned
+- add new examples only when they clearly fit an existing team shape
+- keep validation current as the starter surface grows
+- react to real adoption feedback instead of expanding the repo speculatively
 
 ## Out of scope
 

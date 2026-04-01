@@ -6,8 +6,10 @@ const root = process.cwd();
 const args = process.argv.slice(2);
 
 const options = parseArgs(args);
-const targetDir = options.targetDir ? resolve(options.targetDir) : "";
 const bundleManifests = await getBundleManifests();
+const bundleNames = bundleManifests.map((bundle) => bundle.name);
+const selectedBundles = normalizeNames(options.bundles);
+const unknownBundles = selectedBundles.filter((bundle) => !bundleNames.includes(bundle));
 
 if (options.listVariants) {
   for (const name of await getVariantNames()) {
@@ -23,10 +25,27 @@ if (options.listBundles) {
   process.exit(0);
 }
 
+if (options.describeBundles) {
+  if (unknownBundles.length > 0) {
+    console.error(`Unknown bundle${unknownBundles.length > 1 ? "s" : ""}: ${unknownBundles.join(", ")}`);
+    console.error(`Available bundles: ${bundleNames.join(", ")}`);
+    process.exit(1);
+  }
+
+  const describedBundles =
+    selectedBundles.length > 0
+      ? bundleManifests.filter((bundle) => selectedBundles.includes(bundle.name))
+      : bundleManifests;
+  printBundleDescriptions(describedBundles);
+  process.exit(0);
+}
+
 if (options.help) {
   printUsage();
   process.exit(0);
 }
+
+const targetDir = options.targetDir ? resolve(options.targetDir) : "";
 
 if (!targetDir) {
   printUsage();
@@ -34,11 +53,8 @@ if (!targetDir) {
 }
 
 const variantNames = await getVariantNames();
-const bundleNames = bundleManifests.map((bundle) => bundle.name);
 const bundleMap = new Map(bundleManifests.map((bundle) => [bundle.name, bundle]));
-const selectedBundles = normalizeNames(options.bundles);
 const selectedVariants = normalizeVariants(options.variants);
-const unknownBundles = selectedBundles.filter((bundle) => !bundleNames.includes(bundle));
 const unknownVariants = selectedVariants.filter((variant) => !variantNames.includes(variant));
 
 if (unknownBundles.length > 0) {
@@ -163,6 +179,7 @@ function parseArgs(argv) {
     dryRun: false,
     listVariants: false,
     listBundles: false,
+    describeBundles: false,
     help: false
   };
 
@@ -198,6 +215,11 @@ function parseArgs(argv) {
 
     if (arg === "--list-bundles") {
       parsed.listBundles = true;
+      continue;
+    }
+
+    if (arg === "--describe-bundles") {
+      parsed.describeBundles = true;
       continue;
     }
 
@@ -298,11 +320,32 @@ function printUsage() {
   console.log("  node scripts/install.mjs <target-dir> [--bundle <name>] [--variant <name>] [--variant <name>] [--force] [--dry-run]");
   console.log("  node scripts/install.mjs --list-variants");
   console.log("  node scripts/install.mjs --list-bundles");
+  console.log("  node scripts/install.mjs --describe-bundles [--bundle <name>]");
   console.log("  node scripts/install.mjs --help");
   console.log("");
   console.log("Notes:");
   console.log("  - Bundles apply a named set of variants for a common team shape.");
+  console.log("  - --describe-bundles prints bundle descriptions, MCP profiles, examples, skills, and hook recipes.");
   console.log("  - Use repeated --variant flags or a comma-separated value to apply multiple overlays.");
   console.log("  - Explicit --variant values are applied after bundle variants.");
   console.log("  - Later variants override earlier files when they touch the same path.");
+}
+
+function printBundleDescriptions(bundles) {
+  for (const bundle of bundles) {
+    console.log(`bundle: ${bundle.name}`);
+    console.log(`description: ${bundle.description}`);
+    console.log(`variants: ${formatList(bundle.variants)}`);
+    console.log(`recommended mcp profiles: ${formatList(bundle.recommendedMcpProfiles)}`);
+    console.log(
+      `recommended CLAUDE.md example: ${bundle.recommendedClaudeExample ? bundle.recommendedClaudeExample : "none"}`
+    );
+    console.log(`recommended skills: ${formatList(bundle.recommendedSkills)}`);
+    console.log(`recommended hook recipes: ${formatList(bundle.recommendedHookRecipes)}`);
+    console.log("");
+  }
+}
+
+function formatList(values) {
+  return values && values.length > 0 ? values.join(", ") : "none";
 }

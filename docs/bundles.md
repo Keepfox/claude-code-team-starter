@@ -21,7 +21,7 @@ Use raw variants when:
 | Bundle | Variants | Stack layer | Recommended MCP profiles | Good fit |
 | --- | --- | --- | --- | --- |
 | `admin-console` | `frontend`, `security`, `release-engineering` | Internal-tooling example, internal-tooling checklist, internal-tooling post-edit recipe, infra-protection recipe | `internal-admin`, `security-review`, `release-delivery` | Internal admin tools, operator dashboards, and auth-sensitive web consoles |
-| `product-web` | `frontend`, `release-engineering` | Frontend example, frontend checklist, frontend post-edit recipe | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
+| `product-web` | `frontend`, `release-engineering` | Frontend example, frontend checklist, frontend post-edit recipe | `product-web`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
 | `platform-api` | `backend`, `security`, `release-engineering` | Release checklist, infra-protection recipe | `github-postgres`, `security-review`, `release-delivery` | Service, platform, and infrastructure teams |
 | `client-delivery` | `consulting`, `release-engineering` | Release checklist | `team-onboarding`, `release-delivery` | Consulting teams doing scoped delivery and handoff |
 | `data-python` | `data`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `data-warehouse`, `release-delivery` | Python-heavy analytics, ETL, and warehouse-facing repositories |
@@ -48,6 +48,13 @@ List bundle names:
 
 ```bash
 node scripts/install.mjs --list-bundles
+```
+
+Describe bundles with variants, MCP profiles, examples, skills, and hook recipes:
+
+```bash
+npm run describe-bundles
+node scripts/install.mjs --describe-bundles --bundle product-web
 ```
 
 Dry-run a stack-specific bundle:
@@ -86,3 +93,7 @@ Some bundles now recommend one extra stack layer:
 The install script prints these recommendations after bundle selection so the next steps are visible without opening the manifest files.
 
 It also prints the MCP profiles that best match the bundle, so the bundle path is now usable as both a workflow choice and an integration starting point.
+
+If you want the shortest path to choosing a bundle, use [bundle-selector.md](bundle-selector.md).
+
+If you want copy-paste starter paths with exact bundle plus MCP pairings, use [examples-gallery.md](examples-gallery.md).

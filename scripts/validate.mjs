@@ -77,6 +77,27 @@ const bundles = execFileSync("node", ["scripts/install.mjs", "--list-bundles"], 
   .map((line) => line.trim())
   .filter(Boolean);
 
+const describedBundles = execFileSync("node", ["scripts/install.mjs", "--describe-bundles"], {
+  cwd: root,
+  encoding: "utf8"
+});
+if (bundles.length > 0 && !describedBundles.includes(`bundle: ${bundles[0]}`)) {
+  throw new Error("bundle describe mode did not include the first bundle.");
+}
+if (bundles.length > 0) {
+  const singleBundleDescription = execFileSync(
+    "node",
+    ["scripts/install.mjs", "--describe-bundles", "--bundle", bundles[0]],
+    {
+      cwd: root,
+      encoding: "utf8"
+    }
+  );
+  if (!singleBundleDescription.includes(`bundle: ${bundles[0]}`)) {
+    throw new Error("single-bundle describe mode did not include the requested bundle.");
+  }
+}
+
 smokeInstall([]);
 for (const variant of variants) {
   smokeInstall(["--variant", variant]);

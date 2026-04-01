@@ -19,7 +19,7 @@ node scripts/install.mjs /path/to/your-project
 
 Use the base starter first. Do not add variants on the first pass unless the repo already has a clear team convention for them.
 
-If the repo obviously fits one of the bundle presets, you can start from `docs/bundles.md` instead of building the install from scratch.
+If the repo obviously fits one of the bundle presets, start from `docs/bundle-selector.md` or `docs/examples-gallery.md` instead of building the install from scratch.
 
 ## 2. Start with one small MCP profile
 

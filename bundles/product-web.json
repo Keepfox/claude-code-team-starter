@@ -6,7 +6,7 @@
     "release-engineering"
   ],
   "recommendedMcpProfiles": [
-    "team-onboarding",
+    "product-web",
     "release-delivery"
   ],
   "recommendedClaudeExample": "examples/frontend/CLAUDE.md",

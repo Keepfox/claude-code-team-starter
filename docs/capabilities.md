@@ -51,16 +51,28 @@ These are shipped as examples, not as fully wired production defaults.
 | Local-only settings | Optional | `.claude/settings.local.json` | Personal machine overrides; do not commit |
 | Multi-variant overlays | Optional | `scripts/install.mjs --variant ...` | Later variants win when they write the same path |
 | Bundle plus extra variant | Optional | `scripts/install.mjs --bundle ... --variant ...` | Start from a preset, then specialize it with one more overlay |
-| Stack-aware bundle recommendations | Optional | bundle install output | Prints matching example, skills, and hook recipes for Node, Python, and Go bundles |
+| Stack-aware bundle recommendations | Optional | bundle install output and `--describe-bundles` | Prints matching MCP profiles, example files, skills, and hook recipes for bundle paths |
+| Bundle selector and gallery | Included | `docs/bundle-selector.md` and `docs/examples-gallery.md` | Fast path for choosing a bundle and matching MCP profile without reading every manifest |
 
-## Planned direction
+## Stable scope
 
-These are reasonable next steps for the repo, but they are not fully shipped yet.
+The repo now covers the intended starter baseline:
 
-- more copy-paste onboarding bundles for common team setups
-- richer stack-specific and workflow-specific skills and hooks beyond the current Node, Python, Go, frontend, and internal tooling examples
-- short terminal captures or GIFs for first-run flow
-- stronger scenario bundles for common team shapes
+- base Claude Code team setup
+- named variants for common workflow styles
+- named bundles for common repo shapes
+- scenario-based MCP examples
+- stack-specific and workflow-specific reusable layers
+- onboarding, install, and rollout docs
+- validation and release discipline
+
+## Maintenance direction
+
+Future work should stay narrow and additive.
+
+- add narrowly scoped bundles only when a real recurring team shape shows up
+- add narrowly scoped MCP examples only when they improve an existing bundle path
+- keep docs, examples, and validation aligned as Claude Code evolves
 
 ## Out of scope
 
@@ -80,6 +92,8 @@ If you are new to the repo, read in this order:
 
 1. `README.md`
 2. `docs/install.md`
-3. `docs/config-layers.md`
-4. `docs/variants.md`
-5. `mcp/README.md`
+3. `docs/bundle-selector.md`
+4. `docs/examples-gallery.md`
+5. `docs/config-layers.md`
+6. `docs/variants.md`
+7. `mcp/README.md`

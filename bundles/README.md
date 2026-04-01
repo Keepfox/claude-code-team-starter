@@ -12,3 +12,9 @@ Bundle manifests can also recommend:
 - MCP profiles
 
 See `docs/bundles.md` for the human-readable guide.
+
+For faster entrypoints:
+
+- use `docs/bundle-selector.md` to choose a preset quickly
+- use `docs/examples-gallery.md` for copy-paste starter paths
+- use `npm run describe-bundles` for CLI bundle descriptions

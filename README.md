@@ -115,6 +115,8 @@ node scripts/install.mjs /path/to/your-project
 For more install patterns and first-run checks:
 
 - [docs/install.md](docs/install.md)
+- [docs/bundle-selector.md](docs/bundle-selector.md)
+- [docs/examples-gallery.md](docs/examples-gallery.md)
 - [examples/README.md](examples/README.md)
 
 ### Install Demo
@@ -165,6 +167,8 @@ This starter is opinionated about what is included, what is optional, and what i
 
 - [docs/capabilities.md](docs/capabilities.md)
 - [docs/bundles.md](docs/bundles.md)
+- [docs/bundle-selector.md](docs/bundle-selector.md)
+- [docs/examples-gallery.md](docs/examples-gallery.md)
 - [docs/config-layers.md](docs/config-layers.md)
 - [docs/hook-recipes.md](docs/hook-recipes.md)
 
@@ -183,7 +187,10 @@ node scripts/install.mjs /path/to/your-project --bundle platform-api
 Quick references:
 
 - bundle guide: [docs/bundles.md](docs/bundles.md)
+- bundle selector: [docs/bundle-selector.md](docs/bundle-selector.md)
+- examples gallery: [docs/examples-gallery.md](docs/examples-gallery.md)
 - available bundles: `npm run list-bundles`
+- bundle descriptions: `npm run describe-bundles`
 
 Stack-aware bundle examples:
 
@@ -193,6 +200,12 @@ node scripts/install.mjs /path/to/your-project --bundle python-service
 node scripts/install.mjs /path/to/your-project --bundle go-service
 node scripts/install.mjs /path/to/your-project --bundle data-python
 node scripts/install.mjs /path/to/your-project --bundle admin-console
+```
+
+Describe one bundle before installing it:
+
+```bash
+node scripts/install.mjs --describe-bundles --bundle product-web
 ```
 
 ## Variant Packs
@@ -227,8 +240,10 @@ Quick references:
 
 - variant map: [variants/README.md](variants/README.md)
 - bundle guide: [docs/bundles.md](docs/bundles.md)
+- bundle selector: [docs/bundle-selector.md](docs/bundle-selector.md)
 - install flags: `npm run install-help`
 - available bundles: `npm run list-bundles`
+- bundle descriptions: `npm run describe-bundles`
 - available variants: `npm run list-variants`
 
 ## Included Commands
@@ -301,6 +316,7 @@ See `mcp/README.md` for examples.
 
 Ready-to-adapt MCP profiles:
 
+- [mcp/examples/product-web.json](mcp/examples/product-web.json)
 - [mcp/examples/github-postgres.json](mcp/examples/github-postgres.json)
 - [mcp/examples/issue-triage.json](mcp/examples/issue-triage.json)
 - [mcp/examples/release-delivery.json](mcp/examples/release-delivery.json)
@@ -351,6 +367,8 @@ Start here:
 
 - [docs/capabilities.md](docs/capabilities.md)
 - [docs/bundles.md](docs/bundles.md)
+- [docs/bundle-selector.md](docs/bundle-selector.md)
+- [docs/examples-gallery.md](docs/examples-gallery.md)
 - [docs/config-layers.md](docs/config-layers.md)
 - [docs/install.md](docs/install.md)
 - [docs/onboarding.md](docs/onboarding.md)

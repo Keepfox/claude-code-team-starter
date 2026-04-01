@@ -2,10 +2,19 @@
 
 ## Unreleased
 
-- work toward the next release
-- added `data-python` and `admin-console` bundle presets for more real team shapes
-- added matching MCP example profiles for analytics repos and internal admin tools
-- added reusable frontend-heavy and internal-tooling layers for bundles that are not well served by generic Node guidance
+- maintenance updates after `v1.0.0`
+
+## 1.0.0
+
+Released on April 1, 2026.
+
+Included:
+
+- bundle selector and examples gallery so teams can choose a starter path without reading every manifest
+- bundle description mode in the install script via `--describe-bundles`
+- `product-web` MCP profile for frontend-heavy repos with docs, errors, and product analytics
+- updated bundle and capability docs that now reflect a stable starter baseline instead of an open-ended buildout
+- maintenance-focused roadmap now that the intended starter scope is complete
 
 ## 0.3.0
 
