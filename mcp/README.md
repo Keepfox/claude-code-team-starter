@@ -92,5 +92,16 @@ Keep the first version small. Two or three useful servers beat ten half-working 
 - [examples/issue-triage.json](examples/issue-triage.json)
 - [examples/release-delivery.json](examples/release-delivery.json)
 - [examples/security-review.json](examples/security-review.json)
+- [examples/team-onboarding.json](examples/team-onboarding.json)
 
 Use these as starting points, not production-ready drop-ins.
+
+## Suggested onboarding profile
+
+If a new teammate only needs enough context to become productive quickly, start with:
+
+- GitHub for code and pull requests
+- docs or knowledge base for internal conventions
+- tasks for ticket intake and scope
+
+That is exactly what [examples/team-onboarding.json](examples/team-onboarding.json) is for.

@@ -85,6 +85,16 @@ After copying the files into your project:
 6. Run `/mcp`.
 7. Review `.claude/settings.json` before making broader permissions changes.
 
+## Recommended onboarding path
+
+For a new team member or a fresh repo rollout:
+
+1. Start with the base starter only.
+2. Copy one small MCP profile, usually `mcp/examples/team-onboarding.json`.
+3. Get GitHub, docs, and task access working before adding operational or database MCP servers.
+4. Run `/check-setup` and `/review` on a harmless diff to confirm the workflow feels predictable.
+5. Add variants only after the baseline feels familiar to the team.
+
 ## Recommended first edits
 
 Change these first:

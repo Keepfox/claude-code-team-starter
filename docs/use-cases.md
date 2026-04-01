@@ -126,3 +126,18 @@ Best extensions:
 
 - the `release-engineering` variant
 - GitHub, docs, errors, and deploy control MCP
+
+## 10. New team member onboarding
+
+Use this starter to standardize:
+
+- first-week repo orientation
+- shared command discovery
+- quick access to docs, tickets, and pull requests
+- a safe baseline before broader tool permissions are added
+
+Best extensions:
+
+- `mcp/examples/team-onboarding.json`
+- `/check-setup`
+- `/review`

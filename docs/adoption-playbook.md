@@ -54,6 +54,10 @@ Goal:
 
 - keep the starter useful without turning it into a giant integration surface
 
+Good first profile:
+
+- `mcp/examples/team-onboarding.json` for GitHub, docs, and task-tracking access
+
 ## Stage 5: Team-specific packs
 
 Once the baseline works, create focused variants:

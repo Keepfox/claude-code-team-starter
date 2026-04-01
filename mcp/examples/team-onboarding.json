@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "${GITHUB_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_MCP_TOKEN}"
+      }
+    },
+    "knowledge-base": {
+      "type": "http",
+      "url": "${DOCS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DOCS_MCP_TOKEN}"
+      }
+    },
+    "tasks": {
+      "type": "http",
+      "url": "${TASKS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${TASKS_MCP_TOKEN}"
+      }
+    }
+  }
+}

@@ -227,6 +227,9 @@ Ready-to-adapt MCP profiles:
 
 - [mcp/examples/github-postgres.json](mcp/examples/github-postgres.json)
 - [mcp/examples/issue-triage.json](mcp/examples/issue-triage.json)
+- [mcp/examples/release-delivery.json](mcp/examples/release-delivery.json)
+- [mcp/examples/security-review.json](mcp/examples/security-review.json)
+- [mcp/examples/team-onboarding.json](mcp/examples/team-onboarding.json)
 
 ## Suggested Use
 
