@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "issues": {
+      "type": "http",
+      "url": "${ISSUES_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${ISSUES_MCP_TOKEN}"
+      }
+    },
+    "knowledge-base": {
+      "type": "http",
+      "url": "${DOCS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DOCS_MCP_TOKEN}"
+      }
+    },
+    "errors": {
+      "type": "http",
+      "url": "${ERRORS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${ERRORS_MCP_TOKEN}"
+      }
+    }
+  }
+}

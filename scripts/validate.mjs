@@ -8,7 +8,9 @@ const jsonFiles = [
   ".claude/settings.json",
   ".claude/settings.local.example.json",
   ".mcp.json",
-  "package.json"
+  "package.json",
+  "mcp/examples/github-postgres.json",
+  "mcp/examples/issue-triage.json"
 ];
 
 const hookFiles = listFiles(".claude/hooks").filter((file) => file.endsWith(".mjs"));

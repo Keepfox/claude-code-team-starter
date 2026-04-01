@@ -36,6 +36,16 @@ Official docs:
 - https://docs.anthropic.com/en/docs/claude-code/hooks
 - https://docs.anthropic.com/en/docs/claude-code/mcp
 
+## Good Fit
+
+This starter is a good fit if you want to standardize Claude Code usage across:
+
+- solo consulting work
+- small engineering teams
+- internal platform teams
+- client delivery teams
+- MCP-heavy repositories with shared tooling
+
 ## Quick Start
 
 1. Install Claude Code.
@@ -122,6 +132,11 @@ The root `.mcp.json` is intentionally minimal and safe to commit.
 
 See `mcp/README.md` for examples.
 
+Ready-to-adapt MCP profiles:
+
+- [mcp/examples/github-postgres.json](mcp/examples/github-postgres.json)
+- [mcp/examples/issue-triage.json](mcp/examples/issue-triage.json)
+
 ## Suggested Use
 
 For a small team, this repo is enough to standardize:
@@ -166,6 +181,8 @@ Start here:
 
 - [docs/customize.md](docs/customize.md)
 - [docs/public-launch-checklist.md](docs/public-launch-checklist.md)
+- [docs/adoption-playbook.md](docs/adoption-playbook.md)
+- [docs/use-cases.md](docs/use-cases.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Legal Note

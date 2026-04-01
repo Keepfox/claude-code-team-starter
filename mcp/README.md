@@ -85,3 +85,10 @@ Good first MCP servers for team adoption:
 - internal docs or admin APIs
 
 Keep the first version small. Two or three useful servers beat ten half-working ones.
+
+## Example Profiles
+
+- [examples/github-postgres.json](examples/github-postgres.json)
+- [examples/issue-triage.json](examples/issue-triage.json)
+
+Use these as starting points, not production-ready drop-ins.
