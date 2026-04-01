@@ -117,6 +117,8 @@ Quick references:
   Creates an implementation plan before coding.
 - `/review [focus]`
   Reviews the current working tree and reports findings first.
+- `/review-security [scope]`
+  Reviews the current working tree with a security-first lens.
 - `/fix-test [test-command]`
   Runs the smallest relevant test command and fixes failures.
 - `/incident [symptom]`
@@ -135,6 +137,7 @@ Quick references:
 - `debugger`
 - `release-manager`
 - `docs-writer`
+- `security-reviewer`
 
 These are project-level agents, so your team can share a common workflow without depending on private home-directory config.
 
@@ -215,6 +218,8 @@ For a consultancy or internal platform team, this can become the base for:
 Start here:
 
 - [docs/install.md](docs/install.md)
+- [docs/commands.md](docs/commands.md)
+- [docs/agents.md](docs/agents.md)
 - [docs/customize.md](docs/customize.md)
 - [docs/public-launch-checklist.md](docs/public-launch-checklist.md)
 - [docs/adoption-playbook.md](docs/adoption-playbook.md)

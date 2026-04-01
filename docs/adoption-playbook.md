@@ -22,6 +22,7 @@ Add:
 - `code-reviewer`
 - `test-runner`
 - `debugger`
+- `security-reviewer` for repos with higher risk around auth, secrets, or shell automation
 
 Goal:
 
