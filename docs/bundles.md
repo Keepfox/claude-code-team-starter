@@ -18,12 +18,15 @@ Use raw variants when:
 
 ## Available bundles
 
-| Bundle | Variants | Recommended MCP profiles | Good fit |
-| --- | --- | --- | --- |
-| `product-web` | `frontend`, `release-engineering` | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
-| `platform-api` | `backend`, `security`, `release-engineering` | `github-postgres`, `security-review`, `release-delivery` | Service, platform, and infrastructure teams |
-| `client-delivery` | `consulting`, `release-engineering` | `team-onboarding`, `release-delivery` | Consulting teams doing scoped delivery and handoff |
-| `support-response` | `support-triage`, `security` | `issue-triage`, `security-review` | Support, incident, and escalation workflows |
+| Bundle | Variants | Stack layer | Recommended MCP profiles | Good fit |
+| --- | --- | --- | --- | --- |
+| `product-web` | `frontend`, `release-engineering` | Node example, Node checklist, Node post-edit recipe | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
+| `platform-api` | `backend`, `security`, `release-engineering` | Release checklist, infra-protection recipe | `github-postgres`, `security-review`, `release-delivery` | Service, platform, and infrastructure teams |
+| `client-delivery` | `consulting`, `release-engineering` | Release checklist | `team-onboarding`, `release-delivery` | Consulting teams doing scoped delivery and handoff |
+| `support-response` | `support-triage`, `security` | Infra-protection recipe | `issue-triage`, `security-review` | Support, incident, and escalation workflows |
+| `node-service` | `backend`, `release-engineering` | Node example, Node checklist, Node post-edit recipe | `github-postgres`, `release-delivery` | Node.js or TypeScript services |
+| `python-service` | `backend`, `security`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `github-postgres`, `security-review`, `release-delivery` | Python services with stronger security and delivery needs |
+| `go-service` | `backend`, `release-engineering` | Go example, Go checklist, Go post-edit recipe | `github-postgres`, `release-delivery` | Go services that care about API stability and rollout checks |
 
 ## Install examples
 
@@ -45,6 +48,12 @@ List bundle names:
 node scripts/install.mjs --list-bundles
 ```
 
+Dry-run a stack-specific bundle:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle python-service --dry-run
+```
+
 ## Order rules
 
 - bundle variants are applied first
@@ -60,4 +69,16 @@ After installing a bundle:
 1. run `/check-setup`
 2. review `.claude/settings.json`
 3. copy one of the recommended MCP profiles into your project `.mcp.json`
-4. try `/review` on a harmless diff
+4. if the bundle recommends a stack example, merge the matching file from `examples/` into your project `CLAUDE.md`
+5. if the bundle recommends a skill or hook recipe, enable the smallest useful one first
+6. try `/review` on a harmless diff
+
+## Stack-aware bundle guidance
+
+Some bundles now recommend one extra stack layer:
+
+- a short stack-specific `CLAUDE.md` example from `examples/`
+- one or more reusable skills from `.claude/skills/`
+- one or more optional hook recipes from `.claude/hooks/recipes/`
+
+The install script prints these recommendations after bundle selection so the next steps are visible without opening the manifest files.

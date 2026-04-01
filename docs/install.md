@@ -55,6 +55,12 @@ Install with a bundle:
 node scripts/install.mjs /path/to/your-project --bundle product-web
 ```
 
+Install with a stack-aware bundle:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle node-service
+```
+
 Install with multiple variants:
 
 ```bash
@@ -124,6 +130,8 @@ For a new team member or a fresh repo rollout:
 If you want the full first-week flow, use [docs/onboarding.md](onboarding.md).
 
 If your team shape is already clear, start from [docs/bundles.md](bundles.md) before choosing variants one by one.
+
+If the repo is clearly Node, Python, or Go, prefer one of the stack-aware bundles so the installer also points you to the matching example, skills, and hook recipes.
 
 ## Recommended first edits
 

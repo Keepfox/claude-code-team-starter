@@ -1,6 +1,6 @@
 {
-  "name": "platform-api",
-  "description": "Backend, security, and release workflows for service or platform teams.",
+  "name": "python-service",
+  "description": "Backend, security, and delivery workflows for a Python service repository.",
   "variants": [
     "backend",
     "security",
@@ -11,10 +11,13 @@
     "security-review",
     "release-delivery"
   ],
+  "recommendedClaudeExample": "examples/python/CLAUDE.md",
   "recommendedSkills": [
+    "python-change-checklist",
     "release-checklist"
   ],
   "recommendedHookRecipes": [
+    "posttool-python-quality-context.mjs",
     "pretool-protect-infra.mjs"
   ]
 }

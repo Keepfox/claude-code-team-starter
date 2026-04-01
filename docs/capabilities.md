@@ -23,7 +23,7 @@ Use it when you want to answer:
 | Starter skill examples | Included | `.claude/skills/` | Small reusable skill patterns, including stack-specific checklists |
 | Minimal MCP file | Included | `.mcp.json` | Safe empty project-scoped entrypoint |
 | Install helper | Included | `scripts/install.mjs` | Copies the base starter and optional variants |
-| Bundle presets | Included | `bundles/` and `docs/bundles.md` | Named install presets for common team shapes |
+| Bundle presets | Included | `bundles/` and `docs/bundles.md` | Named install presets for common team shapes, including stack-aware bundle guidance |
 | Setup audit | Included | `.claude/scripts/doctor.mjs` and `/check-setup` | Verifies starter presence, gitignore safety, and MCP placeholders |
 | Validation | Included | `npm run validate` | Checks JSON, scripts, assets, and smoke installs |
 | Public visuals | Included | `assets/` | README and social preview assets |
@@ -51,6 +51,7 @@ These are shipped as examples, not as fully wired production defaults.
 | Local-only settings | Optional | `.claude/settings.local.json` | Personal machine overrides; do not commit |
 | Multi-variant overlays | Optional | `scripts/install.mjs --variant ...` | Later variants win when they write the same path |
 | Bundle plus extra variant | Optional | `scripts/install.mjs --bundle ... --variant ...` | Start from a preset, then specialize it with one more overlay |
+| Stack-aware bundle recommendations | Optional | bundle install output | Prints matching example, skills, and hook recipes for Node, Python, and Go bundles |
 
 ## Planned direction
 

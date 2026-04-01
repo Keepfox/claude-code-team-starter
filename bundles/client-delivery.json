@@ -8,5 +8,8 @@
   "recommendedMcpProfiles": [
     "team-onboarding",
     "release-delivery"
+  ],
+  "recommendedSkills": [
+    "release-checklist"
   ]
 }

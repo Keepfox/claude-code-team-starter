@@ -8,5 +8,8 @@
   "recommendedMcpProfiles": [
     "issue-triage",
     "security-review"
+  ],
+  "recommendedHookRecipes": [
+    "pretool-protect-infra.mjs"
   ]
 }

@@ -8,6 +8,7 @@
 - added hook recipe library for safer repo-specific automation
 - added install and first-run terminal demo assets for README and onboarding docs
 - added stack-specific skills and hook recipes for Node, Python, and Go repositories
+- added stack-aware bundle presets and installer guidance for Node, Python, and Go services
 
 ## 0.2.0
 

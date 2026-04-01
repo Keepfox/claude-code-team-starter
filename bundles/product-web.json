@@ -8,5 +8,13 @@
   "recommendedMcpProfiles": [
     "team-onboarding",
     "release-delivery"
+  ],
+  "recommendedClaudeExample": "examples/node/CLAUDE.md",
+  "recommendedSkills": [
+    "node-change-checklist",
+    "release-checklist"
+  ],
+  "recommendedHookRecipes": [
+    "posttool-node-quality-context.mjs"
   ]
 }

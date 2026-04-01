@@ -185,6 +185,14 @@ Quick references:
 - bundle guide: [docs/bundles.md](docs/bundles.md)
 - available bundles: `npm run list-bundles`
 
+Stack-aware bundle examples:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle node-service
+node scripts/install.mjs /path/to/your-project --bundle python-service
+node scripts/install.mjs /path/to/your-project --bundle go-service
+```
+
 ## Variant Packs
 
 This starter also includes overlay variants for common working styles:

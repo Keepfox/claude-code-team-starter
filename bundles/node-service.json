@@ -1,20 +1,21 @@
 {
-  "name": "platform-api",
-  "description": "Backend, security, and release workflows for service or platform teams.",
+  "name": "node-service",
+  "description": "Backend and delivery workflows for a Node.js or TypeScript service repository.",
   "variants": [
     "backend",
-    "security",
     "release-engineering"
   ],
   "recommendedMcpProfiles": [
     "github-postgres",
-    "security-review",
     "release-delivery"
   ],
+  "recommendedClaudeExample": "examples/node/CLAUDE.md",
   "recommendedSkills": [
+    "node-change-checklist",
     "release-checklist"
   ],
   "recommendedHookRecipes": [
+    "posttool-node-quality-context.mjs",
     "pretool-protect-infra.mjs"
   ]
 }

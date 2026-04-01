@@ -1,20 +1,21 @@
 {
-  "name": "platform-api",
-  "description": "Backend, security, and release workflows for service or platform teams.",
+  "name": "go-service",
+  "description": "Backend and rollout workflows for a Go service repository with explicit API and release checks.",
   "variants": [
     "backend",
-    "security",
     "release-engineering"
   ],
   "recommendedMcpProfiles": [
     "github-postgres",
-    "security-review",
     "release-delivery"
   ],
+  "recommendedClaudeExample": "examples/go/CLAUDE.md",
   "recommendedSkills": [
+    "go-change-checklist",
     "release-checklist"
   ],
   "recommendedHookRecipes": [
+    "posttool-go-quality-context.mjs",
     "pretool-protect-infra.mjs"
   ]
 }

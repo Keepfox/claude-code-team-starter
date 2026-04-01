@@ -58,6 +58,17 @@ const finalVariants = normalizeNames([...bundleVariants, ...selectedVariants]);
 const bundleProfiles = normalizeNames(
   selectedBundles.flatMap((bundle) => bundleMap.get(bundle)?.recommendedMcpProfiles || [])
 );
+const bundleExamples = normalizeNames(
+  selectedBundles.flatMap((bundle) =>
+    bundleMap.get(bundle)?.recommendedClaudeExample ? [bundleMap.get(bundle).recommendedClaudeExample] : []
+  )
+);
+const bundleSkills = normalizeNames(
+  selectedBundles.flatMap((bundle) => bundleMap.get(bundle)?.recommendedSkills || [])
+);
+const bundleHookRecipes = normalizeNames(
+  selectedBundles.flatMap((bundle) => bundleMap.get(bundle)?.recommendedHookRecipes || [])
+);
 
 await mkdir(targetDir, { recursive: true });
 
@@ -114,6 +125,26 @@ if (finalVariants.length > 0) {
 
 if (bundleProfiles.length > 0) {
   console.log(`recommended mcp profiles: ${bundleProfiles.join(", ")}`);
+}
+
+if (bundleExamples.length > 0) {
+  console.log(`recommended CLAUDE.md example: ${bundleExamples.join(", ")}`);
+}
+
+if (bundleSkills.length > 0) {
+  console.log(`recommended skills: ${bundleSkills.join(", ")}`);
+}
+
+if (bundleHookRecipes.length > 0) {
+  console.log(`recommended hook recipes: ${bundleHookRecipes.join(", ")}`);
+}
+
+if (
+  bundleProfiles.length > 0 ||
+  bundleExamples.length > 0 ||
+  bundleSkills.length > 0 ||
+  bundleHookRecipes.length > 0
+) {
   console.log("see docs/bundles.md for bundle guidance");
 }
 
