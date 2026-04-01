@@ -3,6 +3,7 @@
 ## Unreleased
 
 - work toward `v0.3.0`
+- added capability matrix and config-layer docs
 
 ## 0.2.0
 

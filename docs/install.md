@@ -105,6 +105,8 @@ Change these first:
 - `CLAUDE.md`
 - `.mcp.json`
 
+If you are unsure what belongs in each file, use [config-layers.md](config-layers.md).
+
 Then adapt:
 
 - `.claude/commands/` for your workflow

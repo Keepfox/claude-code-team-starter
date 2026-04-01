@@ -144,6 +144,15 @@ Use the full walkthrough here:
 
 ![Onboarding path preview](assets/onboarding-path.png)
 
+## Capability Matrix
+
+This starter is opinionated about what is included, what is optional, and what is outside the repo's scope.
+
+- [docs/capabilities.md](docs/capabilities.md)
+- [docs/config-layers.md](docs/config-layers.md)
+
+Use these before deciding whether a change belongs in `CLAUDE.md`, `.claude/settings.json`, `.claude/settings.local.json`, or `.mcp.json`.
+
 ## Variant Packs
 
 This starter also includes overlay variants for common working styles:
@@ -289,6 +298,8 @@ For a consultancy or internal platform team, this can become the base for:
 
 Start here:
 
+- [docs/capabilities.md](docs/capabilities.md)
+- [docs/config-layers.md](docs/config-layers.md)
 - [docs/install.md](docs/install.md)
 - [docs/onboarding.md](docs/onboarding.md)
 - [docs/commands.md](docs/commands.md)

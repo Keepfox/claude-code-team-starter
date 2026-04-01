@@ -1,6 +1,17 @@
 # Customize This Starter
 
-## 1. Adjust permissions first
+## 1. Choose the right layer first
+
+Before editing anything, decide whether the change is:
+
+- shared team behavior
+- local-only personal behavior
+- MCP configuration
+- repo memory and conventions
+
+Read [config-layers.md](config-layers.md) first if you are unsure.
+
+## 2. Adjust permissions first
 
 Open `.claude/settings.json` and review:
 
@@ -11,7 +22,9 @@ Open `.claude/settings.json` and review:
 
 For most teams, this is the first file to tune.
 
-## 2. Replace generic commands with team workflows
+If the change is only for you or only for your machine, put it in `.claude/settings.local.json` instead of changing the shared project file.
+
+## 3. Replace generic commands with team workflows
 
 The starter commands are intentionally broad.
 
@@ -21,7 +34,7 @@ Adapt them to your real workflow:
 - replace `/incident` with your on-call or support flow
 - add commands for migrations, docs, or PR summaries
 
-## 3. Tighten subagent scopes
+## 4. Tighten subagent scopes
 
 If a subagent should not edit files, remove `Edit`, `MultiEdit`, and `Write`.
 
@@ -29,7 +42,7 @@ If a subagent should not run commands, remove `Bash`.
 
 Treat subagents like small roles with explicit power boundaries.
 
-## 4. Customize hooks conservatively
+## 5. Customize hooks conservatively
 
 Hooks are powerful because they run deterministically.
 
@@ -46,7 +59,7 @@ Avoid:
 - long-running hooks
 - hooks that assume one language stack unless this repo is stack-specific
 
-## 5. Add MCP by scope
+## 6. Add MCP by scope
 
 Recommended pattern:
 
@@ -58,7 +71,9 @@ Use `mcp/examples/` only as a starting point.
 
 Keep the project file readable enough that reviewers can understand what each server is for.
 
-## 6. Keep `CLAUDE.md` short
+If you need a quick overview of what the starter already includes versus what is optional, use [capabilities.md](capabilities.md).
+
+## 7. Keep `CLAUDE.md` short
 
 Use `CLAUDE.md` for:
 

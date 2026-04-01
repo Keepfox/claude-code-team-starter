@@ -6,6 +6,7 @@
 - publish short terminal captures or GIFs for install and first-run flows
 - add copy-paste onboarding bundles for the most common team setups
 - prepare a `v0.3.0` release around starter bundles and richer docs
+- turn the capability matrix into stronger copy-paste bundles and starter presets
 
 ## Mid-term
 

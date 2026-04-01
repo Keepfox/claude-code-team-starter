@@ -68,6 +68,8 @@ Review these files before broader team use:
 - `CLAUDE.md`
 - `.mcp.json`
 
+If you are unsure where a change belongs, use [config-layers.md](config-layers.md) before editing.
+
 Usually the first changes are:
 
 - tighten or relax permissions for the repo
