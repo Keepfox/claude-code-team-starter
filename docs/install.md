@@ -140,6 +140,8 @@ If your team shape is already clear, start from [docs/bundles.md](bundles.md) be
 
 If the repo is clearly Node, Python, or Go, prefer one of the stack-aware bundles so the installer also points you to the matching example, skills, and hook recipes.
 
+For `data-python` and `admin-console`, the installer now also points you to the matching MCP example profile.
+
 ## Recommended first edits
 
 Change these first:

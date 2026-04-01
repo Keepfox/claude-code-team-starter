@@ -7,7 +7,7 @@
     "release-engineering"
   ],
   "recommendedMcpProfiles": [
-    "team-onboarding",
+    "internal-admin",
     "security-review",
     "release-delivery"
   ],

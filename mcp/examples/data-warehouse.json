@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "${GITHUB_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_MCP_TOKEN}"
+      }
+    },
+    "warehouse": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "${WAREHOUSE_CONNECTION_STRING}"
+      ],
+      "env": {
+        "POSTGRES_SSL_MODE": "${WAREHOUSE_SSL_MODE:-require}"
+      }
+    },
+    "analytics-docs": {
+      "type": "http",
+      "url": "${DOCS_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DOCS_MCP_TOKEN}"
+      }
+    }
+  }
+}

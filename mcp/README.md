@@ -88,13 +88,24 @@ Keep the first version small. Two or three useful servers beat ten half-working 
 
 ## Example Profiles
 
+- [examples/data-warehouse.json](examples/data-warehouse.json)
 - [examples/github-postgres.json](examples/github-postgres.json)
+- [examples/internal-admin.json](examples/internal-admin.json)
 - [examples/issue-triage.json](examples/issue-triage.json)
 - [examples/release-delivery.json](examples/release-delivery.json)
 - [examples/security-review.json](examples/security-review.json)
 - [examples/team-onboarding.json](examples/team-onboarding.json)
 
 Use these as starting points, not production-ready drop-ins.
+
+## Bundle-aligned profiles
+
+If you install one of the stack-aware bundles, these are the fastest matching MCP entrypoints:
+
+- `data-python` -> `examples/data-warehouse.json`
+- `admin-console` -> `examples/internal-admin.json`
+- `node-service` -> `examples/github-postgres.json`
+- `python-service` -> `examples/github-postgres.json` or `examples/security-review.json`
 
 ## Suggested onboarding profile
 

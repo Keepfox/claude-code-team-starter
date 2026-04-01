@@ -6,7 +6,7 @@
     "release-engineering"
   ],
   "recommendedMcpProfiles": [
-    "github-postgres",
+    "data-warehouse",
     "release-delivery"
   ],
   "recommendedClaudeExample": "examples/python/CLAUDE.md",

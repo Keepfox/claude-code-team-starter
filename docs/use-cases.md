@@ -99,6 +99,10 @@ Recommended bundle:
 
 - `data-python`
 
+Matching MCP profile:
+
+- `mcp/examples/data-warehouse.json`
+
 ## 7. Shared engineering enablement repo
 
 Use this starter as a public or internal baseline when you want one place to maintain:
@@ -179,3 +183,7 @@ Use this starter to standardize:
 Recommended bundle:
 
 - `admin-console`
+
+Matching MCP profile:
+
+- `mcp/examples/internal-admin.json`

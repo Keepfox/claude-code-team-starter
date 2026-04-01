@@ -20,11 +20,11 @@ Use raw variants when:
 
 | Bundle | Variants | Stack layer | Recommended MCP profiles | Good fit |
 | --- | --- | --- | --- | --- |
-| `admin-console` | `frontend`, `security`, `release-engineering` | Node example, Node checklist, Node post-edit recipe, infra-protection recipe | `team-onboarding`, `security-review`, `release-delivery` | Internal admin tools, operator dashboards, and auth-sensitive web consoles |
+| `admin-console` | `frontend`, `security`, `release-engineering` | Node example, Node checklist, Node post-edit recipe, infra-protection recipe | `internal-admin`, `security-review`, `release-delivery` | Internal admin tools, operator dashboards, and auth-sensitive web consoles |
 | `product-web` | `frontend`, `release-engineering` | Node example, Node checklist, Node post-edit recipe | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
 | `platform-api` | `backend`, `security`, `release-engineering` | Release checklist, infra-protection recipe | `github-postgres`, `security-review`, `release-delivery` | Service, platform, and infrastructure teams |
 | `client-delivery` | `consulting`, `release-engineering` | Release checklist | `team-onboarding`, `release-delivery` | Consulting teams doing scoped delivery and handoff |
-| `data-python` | `data`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `github-postgres`, `release-delivery` | Python-heavy analytics, ETL, and warehouse-facing repositories |
+| `data-python` | `data`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `data-warehouse`, `release-delivery` | Python-heavy analytics, ETL, and warehouse-facing repositories |
 | `support-response` | `support-triage`, `security` | Infra-protection recipe | `issue-triage`, `security-review` | Support, incident, and escalation workflows |
 | `node-service` | `backend`, `release-engineering` | Node example, Node checklist, Node post-edit recipe | `github-postgres`, `release-delivery` | Node.js or TypeScript services |
 | `python-service` | `backend`, `security`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `github-postgres`, `security-review`, `release-delivery` | Python services with stronger security and delivery needs |
@@ -84,3 +84,5 @@ Some bundles now recommend one extra stack layer:
 - one or more optional hook recipes from `.claude/hooks/recipes/`
 
 The install script prints these recommendations after bundle selection so the next steps are visible without opening the manifest files.
+
+It also prints the MCP profiles that best match the bundle, so the bundle path is now usable as both a workflow choice and an integration starting point.
