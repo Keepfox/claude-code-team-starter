@@ -54,6 +54,10 @@ Recommended pattern:
 - personal/private servers in user config
 - sensitive credentials through environment variables
 
+Use `mcp/examples/` only as a starting point.
+
+Keep the project file readable enough that reviewers can understand what each server is for.
+
 ## 6. Keep `CLAUDE.md` short
 
 Use `CLAUDE.md` for:
@@ -62,5 +66,7 @@ Use `CLAUDE.md` for:
 - review style
 - test expectations
 - repo-specific rules
+
+If you want stack-specific guidance, start from one of the examples in `examples/` or install a variant first.
 
 Do not turn it into a giant policy document no one will maintain.

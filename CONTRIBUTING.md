@@ -44,6 +44,7 @@ This checks:
 - JSON syntax
 - hook script syntax
 - command and agent frontmatter presence
+- installer smoke tests for the base starter and each variant
 
 ## Design principles
 

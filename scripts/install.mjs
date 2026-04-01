@@ -8,6 +8,18 @@ const args = process.argv.slice(2);
 const options = parseArgs(args);
 const targetDir = options.targetDir ? resolve(options.targetDir) : "";
 
+if (options.listVariants) {
+  for (const name of await getVariantNames()) {
+    console.log(name);
+  }
+  process.exit(0);
+}
+
+if (options.help) {
+  printUsage();
+  process.exit(0);
+}
+
 if (!targetDir) {
   printUsage();
   process.exit(1);
@@ -77,7 +89,9 @@ function parseArgs(argv) {
     targetDir: "",
     variant: "",
     force: false,
-    dryRun: false
+    dryRun: false,
+    listVariants: false,
+    help: false
   };
 
   for (let i = 0; i < argv.length; i += 1) {
@@ -96,6 +110,16 @@ function parseArgs(argv) {
 
     if (arg === "--dry-run") {
       parsed.dryRun = true;
+      continue;
+    }
+
+    if (arg === "--list-variants") {
+      parsed.listVariants = true;
+      continue;
+    }
+
+    if (arg === "--help" || arg === "-h") {
+      parsed.help = true;
       continue;
     }
 
@@ -151,4 +175,6 @@ async function exists(path) {
 function printUsage() {
   console.log("Usage:");
   console.log("  node scripts/install.mjs <target-dir> [--variant <name>] [--force] [--dry-run]");
+  console.log("  node scripts/install.mjs --list-variants");
+  console.log("  node scripts/install.mjs --help");
 }

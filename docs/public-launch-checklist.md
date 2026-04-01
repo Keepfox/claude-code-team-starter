@@ -26,8 +26,10 @@ Before publishing this starter on GitHub:
 ## Adoption
 
 - Test the starter in a fresh sample repo.
+- Test both the base install and at least one variant install.
 - Run `/help`, `/agents`, and `/mcp` to confirm discovery works.
 - Replace any stack-specific assumptions you do not want to support publicly.
+- Make sure `docs/install.md` matches the actual install script flags.
 
 ## Positioning
 

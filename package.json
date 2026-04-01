@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "install-starter": "node scripts/install.mjs",
+    "list-variants": "node scripts/install.mjs --list-variants",
+    "install-help": "node scripts/install.mjs --help",
     "validate": "node scripts/validate.mjs"
   },
   "engines": {

@@ -1,5 +1,6 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 const root = process.cwd();
@@ -50,6 +51,19 @@ for (const file of skillFiles) {
   }
 }
 
+const variants = execFileSync("node", ["scripts/install.mjs", "--list-variants"], {
+  cwd: root,
+  encoding: "utf8"
+})
+  .split("\n")
+  .map((line) => line.trim())
+  .filter(Boolean);
+
+smokeInstall([]);
+for (const variant of variants) {
+  smokeInstall(["--variant", variant]);
+}
+
 console.log("validate: ok");
 
 function listFiles(dir) {
@@ -76,4 +90,27 @@ function listFilesRecursive(dir) {
   }
 
   return results;
+}
+
+function smokeInstall(extraArgs) {
+  const installTarget = mkdtempSync(join(tmpdir(), "cc-team-starter-"));
+  execFileSync("node", ["scripts/install.mjs", installTarget, ...extraArgs], {
+    cwd: root,
+    stdio: "inherit"
+  });
+
+  const requiredBaseFiles = [
+    ".claude/settings.json",
+    ".claude/commands/spec.md",
+    ".claude/agents/code-reviewer.md",
+    ".mcp.json",
+    "CLAUDE.md"
+  ];
+
+  for (const file of requiredBaseFiles) {
+    const absolutePath = join(installTarget, file);
+    if (!existsSync(absolutePath)) {
+      throw new Error(`smoke install missing file: ${file}`);
+    }
+  }
 }

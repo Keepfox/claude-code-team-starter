@@ -68,6 +68,11 @@ Or install it with the helper script:
 node scripts/install.mjs /path/to/your-project
 ```
 
+For more install patterns and first-run checks:
+
+- [docs/install.md](docs/install.md)
+- [examples/README.md](examples/README.md)
+
 3. Open your project and start Claude Code.
 
 ```bash
@@ -88,6 +93,8 @@ This starter also includes overlay variants for common working styles:
 
 - `backend`
 - `consulting`
+- `data`
+- `frontend`
 - `support-triage`
 
 Apply a variant during install:
@@ -97,6 +104,12 @@ node scripts/install.mjs /path/to/your-project --variant backend
 ```
 
 See [docs/variants.md](docs/variants.md) for details.
+
+Quick references:
+
+- variant map: [variants/README.md](variants/README.md)
+- install flags: `npm run install-help`
+- available variants: `npm run list-variants`
 
 ## Included Commands
 
@@ -201,6 +214,7 @@ For a consultancy or internal platform team, this can become the base for:
 
 Start here:
 
+- [docs/install.md](docs/install.md)
 - [docs/customize.md](docs/customize.md)
 - [docs/public-launch-checklist.md](docs/public-launch-checklist.md)
 - [docs/adoption-playbook.md](docs/adoption-playbook.md)
@@ -208,6 +222,8 @@ Start here:
 - [docs/roadmap.md](docs/roadmap.md)
 - [docs/use-cases.md](docs/use-cases.md)
 - [docs/variants.md](docs/variants.md)
+- [examples/README.md](examples/README.md)
+- [variants/README.md](variants/README.md)
 - [CHANGELOG.md](CHANGELOG.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 

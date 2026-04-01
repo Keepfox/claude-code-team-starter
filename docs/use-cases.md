@@ -56,3 +56,44 @@ Use this starter to package organization-wide defaults:
 - repo onboarding
 
 Then create stack-specific overlays on top.
+
+## 5. Frontend team
+
+Use this starter to standardize:
+
+- UI review prompts
+- accessibility-aware checks
+- component and state-change summaries
+- safer design handoff workflows
+
+Best extension:
+
+- the `frontend` variant
+
+## 6. Data team
+
+Use this starter to standardize:
+
+- query and pipeline review
+- schema-change summaries
+- metric-impact checks
+- rollout notes for data consumers
+
+Best extension:
+
+- the `data` variant
+
+## 7. Shared engineering enablement repo
+
+Use this starter as a public or internal baseline when you want one place to maintain:
+
+- common agent roles
+- cross-repo review habits
+- starter MCP examples
+- stack-specific overlays for different teams
+
+Best extensions:
+
+- `backend` for service repos
+- `frontend` for UI repos
+- `data` for analytics or warehouse repos
