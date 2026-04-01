@@ -7,6 +7,8 @@ Each variant currently adds:
 - one workflow-specific `CLAUDE.md`
 - one extra project command
 
+You can combine variants during install. If two variants write the same path, the later one overrides the earlier one.
+
 ## Available variants
 
 ### `backend`
@@ -38,6 +40,12 @@ Each variant currently adds:
 
 ```bash
 node scripts/install.mjs /path/to/your-project --variant frontend
+```
+
+Combined example:
+
+```bash
+node scripts/install.mjs /path/to/your-project --variant frontend --variant consulting
 ```
 
 See [docs/variants.md](../docs/variants.md) for the longer guide.

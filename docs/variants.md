@@ -4,7 +4,9 @@ Variants are small overlays you can apply on top of the base starter.
 
 Use them when one shared baseline is not specific enough for your workflow.
 
-Each install currently applies one overlay at a time. If you need a combined workflow, copy the nearest variant and make a project-specific pack in your own repo.
+You can apply one variant or combine several overlays in order.
+
+When two variants touch the same file, the later one wins.
 
 ## Available variants
 
@@ -90,6 +92,18 @@ With a variant:
 node scripts/install.mjs /path/to/project --variant backend
 ```
 
+With multiple variants:
+
+```bash
+node scripts/install.mjs /path/to/project --variant frontend --variant consulting
+```
+
+With a comma-separated list:
+
+```bash
+node scripts/install.mjs /path/to/project --variant frontend,consulting
+```
+
 Preview without writing files:
 
 ```bash
@@ -107,3 +121,13 @@ List available variants:
 ```bash
 npm run list-variants
 ```
+
+## Composition rule
+
+Variants are simple overlays.
+
+- base starter files are applied first
+- variants are applied in the order you pass them
+- if two variants write the same file, the later variant overrides the earlier one
+
+This keeps installs predictable and easy to understand.

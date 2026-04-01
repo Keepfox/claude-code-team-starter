@@ -49,6 +49,18 @@ Install with a variant:
 node scripts/install.mjs /path/to/your-project --variant frontend
 ```
 
+Install with multiple variants:
+
+```bash
+node scripts/install.mjs /path/to/your-project --variant frontend --variant consulting
+```
+
+You can also use a comma-separated list:
+
+```bash
+node scripts/install.mjs /path/to/your-project --variant frontend,consulting
+```
+
 Show supported variants:
 
 ```bash
@@ -85,3 +97,5 @@ Then adapt:
 - `.claude/commands/` for your workflow
 - `.claude/agents/` for your team roles
 - `.claude/hooks/` for your safety model
+
+If you combine multiple variants, later variants win when they write the same file path.

@@ -136,6 +136,12 @@ Apply a variant during install:
 node scripts/install.mjs /path/to/your-project --variant backend
 ```
 
+You can also combine overlays:
+
+```bash
+node scripts/install.mjs /path/to/your-project --variant frontend --variant consulting
+```
+
 See [docs/variants.md](docs/variants.md) for details.
 
 Quick references:

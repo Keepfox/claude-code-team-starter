@@ -26,9 +26,11 @@ if (!targetDir) {
 }
 
 const variantNames = await getVariantNames();
+const selectedVariants = normalizeVariants(options.variants);
+const unknownVariants = selectedVariants.filter((variant) => !variantNames.includes(variant));
 
-if (options.variant && !variantNames.includes(options.variant)) {
-  console.error(`Unknown variant: ${options.variant}`);
+if (unknownVariants.length > 0) {
+  console.error(`Unknown variant${unknownVariants.length > 1 ? "s" : ""}: ${unknownVariants.join(", ")}`);
   console.error(`Available variants: ${variantNames.join(", ")}`);
   process.exit(1);
 }
@@ -43,8 +45,8 @@ for (const entry of [".claude", ".mcp.json", "CLAUDE.md"]) {
   }
 }
 
-if (options.variant) {
-  const variantRoot = join(root, "variants", options.variant);
+for (const variant of selectedVariants) {
+  const variantRoot = join(root, "variants", variant);
   for (const file of await listFilesRecursive(variantRoot)) {
     operations.set(relativeFrom(variantRoot, file), file);
   }
@@ -78,6 +80,10 @@ for (const [relativePath, source] of operations.entries()) {
   console.log(`copied ${relativePath}`);
 }
 
+if (selectedVariants.length > 0) {
+  console.log(`variants: ${selectedVariants.join(", ")}`);
+}
+
 if (options.dryRun) {
   console.log("dry-run complete");
 } else {
@@ -87,7 +93,7 @@ if (options.dryRun) {
 function parseArgs(argv) {
   const parsed = {
     targetDir: "",
-    variant: "",
+    variants: [],
     force: false,
     dryRun: false,
     listVariants: false,
@@ -98,7 +104,7 @@ function parseArgs(argv) {
     const arg = argv[i];
 
     if (arg === "--variant") {
-      parsed.variant = argv[i + 1] || "";
+      parsed.variants.push(argv[i + 1] || "");
       i += 1;
       continue;
     }
@@ -138,6 +144,24 @@ async function getVariantNames() {
   return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
 }
 
+function normalizeVariants(values) {
+  const seen = new Set();
+  const results = [];
+
+  for (const value of values) {
+    for (const piece of value.split(",")) {
+      const variant = piece.trim();
+      if (!variant || seen.has(variant)) {
+        continue;
+      }
+      seen.add(variant);
+      results.push(variant);
+    }
+  }
+
+  return results;
+}
+
 async function listFilesRecursive(startPath) {
   const startStat = await stat(startPath);
   if (startStat.isFile()) {
@@ -174,7 +198,11 @@ async function exists(path) {
 
 function printUsage() {
   console.log("Usage:");
-  console.log("  node scripts/install.mjs <target-dir> [--variant <name>] [--force] [--dry-run]");
+  console.log("  node scripts/install.mjs <target-dir> [--variant <name>] [--variant <name>] [--force] [--dry-run]");
   console.log("  node scripts/install.mjs --list-variants");
   console.log("  node scripts/install.mjs --help");
+  console.log("");
+  console.log("Notes:");
+  console.log("  - Use repeated --variant flags or a comma-separated value to apply multiple overlays.");
+  console.log("  - Later variants override earlier files when they touch the same path.");
 }

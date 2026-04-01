@@ -63,6 +63,10 @@ smokeInstall([]);
 for (const variant of variants) {
   smokeInstall(["--variant", variant]);
 }
+if (variants.length >= 2) {
+  smokeInstall(["--variant", variants[0], "--variant", variants[1]]);
+  smokeInstall(["--variant", `${variants[0]},${variants[1]}`]);
+}
 
 console.log("validate: ok");
 
