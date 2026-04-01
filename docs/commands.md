@@ -4,6 +4,10 @@ These are the base project commands included in the starter.
 
 Keep the names simple. The best commands are the ones your team can remember without opening a wiki.
 
+## `/check-setup`
+
+Use when you want a quick audit of starter files, local ignore rules, and missing MCP environment variables.
+
 ## `/fix-test`
 
 Use when a test or verification step is failing and you want the smallest safe fix.

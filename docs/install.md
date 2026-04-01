@@ -80,9 +80,10 @@ After copying the files into your project:
 1. Open the project root.
 2. Start `claude`.
 3. Run `/help`.
-4. Run `/agents`.
-5. Run `/mcp`.
-6. Review `.claude/settings.json` before making broader permissions changes.
+4. Run `/check-setup`.
+5. Run `/agents`.
+6. Run `/mcp`.
+7. Review `.claude/settings.json` before making broader permissions changes.
 
 ## Recommended first edits
 

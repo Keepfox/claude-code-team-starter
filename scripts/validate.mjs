@@ -14,6 +14,7 @@ const jsonFiles = [
 ];
 
 const hookFiles = listFiles(".claude/hooks").filter((file) => file.endsWith(".mjs"));
+const claudeScriptFiles = listFiles(".claude/scripts").filter((file) => file.endsWith(".mjs"));
 const scriptFiles = listFiles("scripts").filter((file) => file.endsWith(".mjs"));
 const agentFiles = listFiles(".claude/agents").filter((file) => file.endsWith(".md"));
 const commandFiles = listFiles(".claude/commands").filter((file) => file.endsWith(".md"));
@@ -29,7 +30,7 @@ for (const file of jsonFiles) {
   JSON.parse(readFileSync(join(root, file), "utf8"));
 }
 
-for (const file of [...hookFiles, ...scriptFiles]) {
+for (const file of [...hookFiles, ...claudeScriptFiles, ...scriptFiles]) {
   execFileSync("node", ["--check", file], {
     cwd: root,
     stdio: "inherit"
@@ -124,8 +125,10 @@ function smokeInstall(extraArgs) {
 
   const requiredBaseFiles = [
     ".claude/settings.json",
+    ".claude/commands/check-setup.md",
     ".claude/commands/spec.md",
     ".claude/agents/code-reviewer.md",
+    ".claude/scripts/doctor.mjs",
     ".mcp.json",
     "CLAUDE.md"
   ];

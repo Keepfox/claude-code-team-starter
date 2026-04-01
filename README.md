@@ -122,6 +122,7 @@ claude
 4. Check that the starter is loaded.
 
 - Run `/help` to see the project commands
+- Run `/check-setup` to audit the starter setup
 - Run `/agents` to see the project subagents
 - Run `/mcp` to inspect MCP connections
 - Open `.claude/settings.json` and adjust permissions for your stack
@@ -167,6 +168,8 @@ Quick references:
   Reviews the current working tree and reports findings first.
 - `/review-security [scope]`
   Reviews the current working tree with a security-first lens.
+- `/check-setup [optional-focus]`
+  Audits starter files, gitignore safety, and MCP environment gaps.
 - `/fix-test [test-command]`
   Runs the smallest relevant test command and fixes failures.
 - `/incident [symptom]`

@@ -6,6 +6,7 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git branch:*)",
+      "Bash(node .claude/scripts/doctor.mjs:*)",
       "Bash(ls:*)",
       "Bash(pwd)",
       "Bash(cat:*)",
