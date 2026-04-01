@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" fill="none">
+  <rect width="1600" height="920" fill="#F5EFE3"/>
+  <rect x="32" y="32" width="1536" height="856" rx="28" fill="#FCF9F1"/>
+  <rect x="62" y="62" width="1476" height="796" rx="26" fill="#15181E"/>
+  <rect x="62" y="62" width="1476" height="796" rx="26" stroke="#E8DECF" stroke-width="2"/>
+
+  <rect x="104" y="102" width="1392" height="86" rx="20" fill="#0F1217"/>
+  <circle cx="146" cy="145" r="9" fill="#FF8360"/>
+  <circle cx="176" cy="145" r="9" fill="#FFCF5A"/>
+  <circle cx="206" cy="145" r="9" fill="#5CD6A5"/>
+  <text x="240" y="151" fill="#F8FAFC" font-size="36" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif" font-weight="700">Claude Code Team Starter</text>
+  <text x="946" y="151" fill="#BFC8D6" font-size="24" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif">shared commands  subagents  hooks  MCP</text>
+
+  <rect x="104" y="220" width="622" height="560" rx="24" fill="#11151B"/>
+  <rect x="104" y="220" width="622" height="560" rx="24" stroke="#2B3442" stroke-width="2"/>
+  <text x="140" y="274" fill="#AAB3C2" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">terminal</text>
+  <text x="140" y="332" fill="#5CD6A5" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">$ npm run list-variants</text>
+  <text x="140" y="382" fill="#EAF1FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">backend</text>
+  <text x="140" y="418" fill="#EAF1FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">consulting</text>
+  <text x="140" y="454" fill="#EAF1FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">data</text>
+  <text x="140" y="490" fill="#EAF1FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">frontend</text>
+  <text x="140" y="526" fill="#EAF1FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">support-triage</text>
+  <text x="140" y="590" fill="#5CD6A5" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">$ claude</text>
+  <text x="140" y="642" fill="#8BC0FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/review-security auth flow</text>
+  <text x="140" y="678" fill="#8BC0FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/ship v0.1.0</text>
+  <text x="140" y="714" fill="#8BC0FF" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/incident flaky deploy</text>
+
+  <rect x="756" y="220" width="344" height="250" rx="24" fill="#F7F0E4"/>
+  <text x="788" y="278" fill="#111317" font-size="32" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif" font-weight="700">Included commands</text>
+  <text x="788" y="332" fill="#7E5F2E" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/spec</text>
+  <text x="788" y="370" fill="#7E5F2E" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/review</text>
+  <text x="788" y="408" fill="#7E5F2E" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/review-security</text>
+  <text x="788" y="446" fill="#7E5F2E" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">/pr-ready</text>
+
+  <rect x="1122" y="220" width="374" height="250" rx="24" fill="#F7F0E4"/>
+  <text x="1154" y="278" fill="#111317" font-size="32" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif" font-weight="700">Included agents</text>
+  <text x="1154" y="332" fill="#7D3652" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">code-reviewer</text>
+  <text x="1154" y="370" fill="#7D3652" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">debugger</text>
+  <text x="1154" y="408" fill="#7D3652" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">security-reviewer</text>
+  <text x="1154" y="446" fill="#7D3652" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">release-manager</text>
+
+  <rect x="756" y="500" width="740" height="280" rx="24" fill="#F7F0E4"/>
+  <text x="788" y="560" fill="#111317" font-size="34" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif" font-weight="700">Starter structure</text>
+  <text x="788" y="620" fill="#185D76" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">.claude/settings.json</text>
+  <text x="788" y="656" fill="#185D76" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">.claude/commands/</text>
+  <text x="788" y="692" fill="#185D76" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">.claude/agents/</text>
+  <text x="788" y="728" fill="#185D76" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">.claude/hooks/</text>
+  <text x="1130" y="620" fill="#2C6A57" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">.mcp.json</text>
+  <text x="1130" y="656" fill="#2C6A57" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">CLAUDE.md</text>
+  <text x="1130" y="692" fill="#2C6A57" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">variants/</text>
+  <text x="1130" y="728" fill="#2C6A57" font-size="24" font-family="Menlo, Monaco, Consolas, monospace">mcp/examples/</text>
+
+  <rect x="108" y="808" width="180" height="40" rx="20" fill="#FF8360"/>
+  <text x="144" y="834" fill="#111317" font-size="22" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif">team starter</text>
+  <rect x="304" y="808" width="116" height="40" rx="20" fill="#FFCF5A"/>
+  <text x="340" y="834" fill="#111317" font-size="22" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif">mcp</text>
+  <rect x="436" y="808" width="168" height="40" rx="20" fill="#5CD6A5"/>
+  <text x="472" y="834" fill="#111317" font-size="22" font-family="Avenir Next, Trebuchet MS, Arial, sans-serif">subagents</text>
+</svg>

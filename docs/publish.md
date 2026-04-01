@@ -37,6 +37,7 @@ git push -u origin main
 
 - add a repository description
 - add topics such as `claude-code`, `claude-code-starter`, `mcp`, `subagents`, `slash-commands`, `developer-tools`, `ai-workflows`
+- upload `assets/social-preview.png` as the repository social preview image in GitHub Settings
 - enable Issues
 - enable Discussions if you want community feedback
 - keep the default branch as `main`

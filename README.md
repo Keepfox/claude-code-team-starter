@@ -7,6 +7,8 @@ Safe, team-friendly starter repo for running real work with Claude Code.
 
 Claude Code starter template for teams that want shared MCP setup, project slash commands, subagents, hooks, and a maintainable `CLAUDE.md`.
 
+![Claude Code Team Starter preview](assets/readme-preview.png)
+
 This repository gives you a practical baseline for:
 
 - shared project settings in `.claude/settings.json`
@@ -71,6 +73,11 @@ Teams usually adopt this starter when they want:
 - reusable slash commands for review, planning, release, and incident work
 - subagents that encode common engineering roles
 - safer defaults for shells, secrets, and project files
+
+## Visual Assets
+
+- README screenshot: `assets/readme-preview.png`
+- GitHub social preview image: `assets/social-preview.png`
 
 ## Quick Start
 
