@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- added the `security` and `release-engineering` variants
+- added starter setup doctor flow and `/check-setup` audit command
+- added onboarding and delivery MCP profiles
+- added onboarding walkthrough docs
+- added onboarding visual asset for README conversion
+
 ## 0.1.0
 
 Initial public release.

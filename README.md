@@ -84,6 +84,7 @@ Teams usually adopt this starter when they want:
 - GitHub social preview image: `assets/social-preview.png`
 - workflow overview: `assets/workflow-overview.png`
 - variant composition preview: `assets/variant-composition.png`
+- onboarding path preview: `assets/onboarding-path.png`
 - regenerate all assets with `npm run render-assets`
 
 ## Quick Start
@@ -127,6 +128,21 @@ claude
 - Run `/agents` to see the project subagents
 - Run `/mcp` to inspect MCP connections
 - Open `.claude/settings.json` and adjust permissions for your stack
+
+## Fast Onboarding
+
+For a new teammate, keep the first session small:
+
+1. Install the base starter only.
+2. Start from [mcp/examples/team-onboarding.json](mcp/examples/team-onboarding.json).
+3. Run `/check-setup`, `/agents`, and `/mcp`.
+4. Try `/review` on a harmless diff before adding variants or broader MCP access.
+
+Use the full walkthrough here:
+
+- [docs/onboarding.md](docs/onboarding.md)
+
+![Onboarding path preview](assets/onboarding-path.png)
 
 ## Variant Packs
 
@@ -274,6 +290,7 @@ For a consultancy or internal platform team, this can become the base for:
 Start here:
 
 - [docs/install.md](docs/install.md)
+- [docs/onboarding.md](docs/onboarding.md)
 - [docs/commands.md](docs/commands.md)
 - [docs/agents.md](docs/agents.md)
 - [docs/customize.md](docs/customize.md)

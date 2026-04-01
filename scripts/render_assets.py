@@ -247,12 +247,63 @@ def render_variant_composition() -> None:
     img.save(ASSETS / "variant-composition.png")
 
 
+def render_onboarding_path() -> None:
+    img = Image.new("RGB", (1600, 900), "#F5EFE3")
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (32, 32, 1568, 868), PAPER, 30)
+    draw.text((90, 92), "First-Day Onboarding Path", fill=DARK, font=font(TITLE_FONT, 46))
+    draw.text(
+        (92, 146),
+        "A low-risk sequence for getting one teammate productive before adding variants or broader MCP access.",
+        fill="#5F6978",
+        font=font(BODY_FONT, 24),
+    )
+
+    stages = [
+        ("1. Install", ["base starter", "no variants yet"], ORANGE),
+        ("2. Connect", ["GitHub", "docs", "tasks"], YELLOW),
+        ("3. Verify", ["/check-setup", "/agents", "/mcp"], GREEN),
+        ("4. Try work", ["/review", "/spec", "small diff"], BLUE),
+    ]
+
+    start_x = 92
+    width = 334
+    gap = 24
+    for index, (title, bullets, accent) in enumerate(stages):
+        x1 = start_x + index * (width + gap)
+        x2 = x1 + width
+        card(draw, (x1, 250, x2, 660), DARK, 26, "#E8DECF", 2)
+        card(draw, (x1 + 26, 278, x1 + 170, 326), accent, 22)
+        draw.text((x1 + 48, 290), title, fill=DARK, font=font(TITLE_FONT, 24))
+        y = 386
+        for bullet in bullets:
+            draw.rounded_rectangle((x1 + 38, y + 8, x1 + 54, y + 24), radius=8, fill=accent)
+            draw.text((x1 + 70, y), bullet, fill=WHITE, font=font(BODY_FONT, 28))
+            y += 76
+        if index < len(stages) - 1:
+            arrow_x = x2 + 8
+            draw.line((arrow_x, 452, arrow_x + 24, 452), fill="#8F99AA", width=6)
+            draw.polygon([(arrow_x + 24, 452), (arrow_x + 10, 440), (arrow_x + 10, 464)], fill="#8F99AA")
+
+    card(draw, (94, 716, 1506, 810), SAND, 24)
+    draw.text(
+        (126, 744),
+        "Keep day one narrow: shared baseline first, then one MCP profile, then a harmless review task.",
+        fill=DARK,
+        font=font(BODY_FONT, 30),
+    )
+
+    img.save(ASSETS / "onboarding-path.png")
+
+
 def main() -> None:
     ASSETS.mkdir(parents=True, exist_ok=True)
     render_social_preview()
     render_readme_preview()
     render_workflow_overview()
     render_variant_composition()
+    render_onboarding_path()
     print("rendered assets")
 
 

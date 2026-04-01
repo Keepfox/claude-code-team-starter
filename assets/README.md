@@ -8,6 +8,7 @@ Included images:
 - `social-preview.png`
 - `workflow-overview.png`
 - `variant-composition.png`
+- `onboarding-path.png`
 
 To regenerate them:
 

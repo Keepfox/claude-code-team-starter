@@ -95,6 +95,8 @@ For a new team member or a fresh repo rollout:
 4. Run `/check-setup` and `/review` on a harmless diff to confirm the workflow feels predictable.
 5. Add variants only after the baseline feels familiar to the team.
 
+If you want the full first-week flow, use [docs/onboarding.md](onboarding.md).
+
 ## Recommended first edits
 
 Change these first:
