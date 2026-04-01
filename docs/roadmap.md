@@ -4,8 +4,8 @@
 
 - add more stack-specific skills and hooks on top of the starter base
 - publish short terminal captures or GIFs for install and first-run flows
-- prepare a `v0.2.0` release with the expanded variant set
 - add copy-paste onboarding bundles for the most common team setups
+- prepare a `v0.3.0` release around starter bundles and richer docs
 
 ## Mid-term
 
