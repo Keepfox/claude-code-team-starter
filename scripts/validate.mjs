@@ -37,6 +37,15 @@ for (const file of [...hookFiles, ...scriptFiles]) {
   });
 }
 
+execFileSync("python3", ["-m", "py_compile", "scripts/render_assets.py"], {
+  cwd: root,
+  stdio: "inherit",
+  env: {
+    ...process.env,
+    PYTHONPYCACHEPREFIX: mkdtempSync(join(tmpdir(), "cc-team-starter-pycache-"))
+  }
+});
+
 for (const file of [...agentFiles, ...commandFiles, ...variantAgentFiles, ...variantCommandFiles]) {
   const content = readFileSync(join(root, file), "utf8");
   if (!content.startsWith("---\n")) {
@@ -66,6 +75,17 @@ for (const variant of variants) {
 if (variants.length >= 2) {
   smokeInstall(["--variant", variants[0], "--variant", variants[1]]);
   smokeInstall(["--variant", `${variants[0]},${variants[1]}`]);
+}
+
+for (const file of [
+  "assets/readme-preview.png",
+  "assets/social-preview.png",
+  "assets/workflow-overview.png",
+  "assets/variant-composition.png"
+]) {
+  if (!existsSync(join(root, file))) {
+    throw new Error(`missing required asset: ${file}`);
+  }
 }
 
 console.log("validate: ok");

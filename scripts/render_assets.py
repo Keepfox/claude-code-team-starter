@@ -1,0 +1,260 @@
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFont
+
+
+ROOT = Path(__file__).resolve().parent.parent
+ASSETS = ROOT / "assets"
+
+TITLE_FONT = "/System/Library/Fonts/Supplemental/Trebuchet MS.ttf"
+BODY_FONT = "/System/Library/Fonts/Supplemental/Arial.ttf"
+MONO_FONT = "/System/Library/Fonts/Supplemental/Menlo.ttc"
+
+CREAM = "#F3EBDD"
+SAND = "#F9F5EC"
+PAPER = "#FCF9F1"
+DARK = "#111317"
+DARKER = "#15181E"
+TERMINAL = "#171A20"
+STROKE = "#2E3440"
+WHITE = "#F8FAFC"
+MUTED = "#C2C8D3"
+SOFT = "#AAB3C2"
+GREEN = "#5CD6A5"
+ORANGE = "#FF8360"
+YELLOW = "#FFCF5A"
+ROSE = "#7D3652"
+TEAL = "#185D76"
+SEA = "#2C6A57"
+BROWN = "#7E5F2E"
+BLUE = "#8BC0FF"
+
+
+def font(path: str, size: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(path, size)
+
+
+def card(draw: ImageDraw.ImageDraw, box, fill, radius=24, outline=None, width=2) -> None:
+    draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=width)
+
+
+def traffic_lights(draw: ImageDraw.ImageDraw, x: int, y: int) -> None:
+    for index, color in enumerate([ORANGE, YELLOW, GREEN]):
+        offset = x + index * 26
+        draw.ellipse((offset, y, offset + 16, y + 16), fill=color)
+
+
+def render_social_preview() -> None:
+    img = Image.new("RGB", (1280, 640), CREAM)
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (32, 32, 1248, 608), SAND, 32)
+    card(draw, (64, 64, 1216, 576), DARK, 28, "#E7DCCB", 2)
+    card(draw, (98, 112, 584, 484), TERMINAL, 24, STROKE, 2)
+
+    traffic_lights(draw, 128, 142)
+    draw.text((220, 138), "claude-code-team-starter", fill=SOFT, font=font(MONO_FONT, 18))
+
+    lines = [
+        ("$ node scripts/install.mjs ./repo --variant frontend", GREEN, 20),
+        ("copied .claude/settings.json", WHITE, 18),
+        ("copied .claude/commands/review.md", WHITE, 18),
+        ("copied .claude/agents/security-reviewer.md", WHITE, 18),
+        ("copied .mcp.json", WHITE, 18),
+        ("validate: ok", "#8D96A6", 18),
+    ]
+    y = 200
+    for text, color, size in lines:
+        draw.text((132, y), text, fill=color, font=font(MONO_FONT, size))
+        y += 44 if size == 20 else 34
+
+    pill_specs = [
+        ("Shared commands", "/review /ship /incident", BROWN, 878),
+        ("Project subagents", "reviewer debugger security", ROSE, 812),
+        ("Safer defaults", "hooks permissions secrets", SEA, 840),
+        ("MCP-ready", "GitHub Postgres docs tools", TEAL, 806),
+    ]
+    y = 120
+    for title, value, accent, text_x in pill_specs:
+        card(draw, (620, y, 1150, y + 72), CREAM, 22)
+        draw.text((650, y + 18), title, fill=DARK, font=font(TITLE_FONT, 24))
+        draw.text((text_x, y + 19), value, fill=accent, font=font(MONO_FONT, 19))
+        y += 92
+
+    x = 620
+    for label, fill, width in [("Starter", ORANGE, 160), ("MCP", YELLOW, 148), ("Subagents", GREEN, 190)]:
+        card(draw, (x, 462, x + width, 510), fill, 24)
+        draw.text((x + 30, 474), label, fill=DARK, font=font(TITLE_FONT, 22))
+        x += width + 16
+
+    draw.text((622, 506), "Claude Code Team Starter", fill=SAND, font=font(TITLE_FONT, 44))
+    draw.text(
+        (624, 548),
+        "Starter template for team workflows, hooks, MCP, and subagents",
+        fill=MUTED,
+        font=font(BODY_FONT, 18),
+    )
+
+    img.save(ASSETS / "social-preview.png")
+
+
+def render_readme_preview() -> None:
+    img = Image.new("RGB", (1600, 900), "#F5EFE3")
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (32, 32, 1568, 868), PAPER, 28)
+    card(draw, (62, 62, 1538, 838), DARKER, 26, "#E8DECF", 2)
+    card(draw, (104, 102, 1496, 188), "#0F1217", 20)
+
+    traffic_lights(draw, 119, 136)
+    draw.text((240, 124), "Claude Code Team Starter", fill=WHITE, font=font(TITLE_FONT, 36))
+    draw.text((935, 130), "shared commands   subagents   hooks   MCP", fill="#BFC8D6", font=font(BODY_FONT, 24))
+
+    card(draw, (104, 220, 726, 780), "#11151B", 24, "#2B3442", 2)
+    draw.text((140, 256), "terminal", fill=SOFT, font=font(MONO_FONT, 24))
+
+    left_lines = [
+        ("$ npm run list-variants", GREEN),
+        ("backend", WHITE),
+        ("consulting", WHITE),
+        ("data", WHITE),
+        ("frontend", WHITE),
+        ("support-triage", WHITE),
+        ("$ claude", GREEN),
+        ("/review-security auth flow", BLUE),
+        ("/ship v0.1.0", BLUE),
+        ("/incident flaky deploy", BLUE),
+    ]
+    y = 320
+    for text, color in left_lines:
+        draw.text((140, y), text, fill=color, font=font(MONO_FONT, 24))
+        y += 50 if text.startswith("$") else 36
+
+    card(draw, (756, 220, 1100, 470), "#F7F0E4", 24)
+    draw.text((788, 274), "Included commands", fill=DARK, font=font(TITLE_FONT, 32))
+    for index, line in enumerate(["/spec", "/review", "/review-security", "/pr-ready"]):
+        draw.text((788, 332 + index * 38), line, fill=BROWN, font=font(MONO_FONT, 24))
+
+    card(draw, (1122, 220, 1496, 470), "#F7F0E4", 24)
+    draw.text((1154, 274), "Included agents", fill=DARK, font=font(TITLE_FONT, 32))
+    for index, line in enumerate(["code-reviewer", "debugger", "security-reviewer", "release-manager"]):
+        draw.text((1154, 332 + index * 38), line, fill=ROSE, font=font(MONO_FONT, 24))
+
+    card(draw, (756, 500, 1496, 780), "#F7F0E4", 24)
+    draw.text((788, 558), "Starter structure", fill=DARK, font=font(TITLE_FONT, 34))
+    for index, line in enumerate([".claude/settings.json", ".claude/commands/", ".claude/agents/", ".claude/hooks/"]):
+        draw.text((788, 620 + index * 36), line, fill=TEAL, font=font(MONO_FONT, 24))
+    for index, line in enumerate([".mcp.json", "CLAUDE.md", "variants/", "mcp/examples/"]):
+        draw.text((1130, 620 + index * 36), line, fill=SEA, font=font(MONO_FONT, 24))
+
+    x = 108
+    for label, fill, width in [("team starter", ORANGE, 180), ("mcp", YELLOW, 116), ("subagents", GREEN, 168)]:
+        card(draw, (x, 808, x + width, 848), fill, 20)
+        draw.text((x + 24, 818), label, fill=DARK, font=font(TITLE_FONT, 22))
+        x += width + 16
+
+    img.save(ASSETS / "readme-preview.png")
+
+
+def render_workflow_overview() -> None:
+    img = Image.new("RGB", (1600, 900), CREAM)
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (32, 32, 1568, 868), PAPER, 30)
+    draw.text((90, 92), "How Teams Use The Starter", fill=DARK, font=font(TITLE_FONT, 46))
+    draw.text(
+        (92, 146),
+        "A simple path from install to shared workflows, safer defaults, and MCP-enabled delivery.",
+        fill="#5F6978",
+        font=font(BODY_FONT, 24),
+    )
+
+    columns = [
+        ("1. Install", ["copy .claude", "copy CLAUDE.md", "choose variants"], ORANGE),
+        ("2. Share", ["project commands", "subagents", "repo memory"], YELLOW),
+        ("3. Guard", ["hooks", "permissions", "secret protection"], GREEN),
+        ("4. Connect", ["GitHub", "Postgres", "docs", "internal tools"], "#8BC0FF"),
+    ]
+
+    start_x = 88
+    width = 334
+    gap = 26
+    for index, (title, bullets, accent) in enumerate(columns):
+        x1 = start_x + index * (width + gap)
+        x2 = x1 + width
+        card(draw, (x1, 240, x2, 690), DARK, 26, "#E8DECF", 2)
+        card(draw, (x1 + 28, 268, x1 + 182, 316), accent, 22)
+        draw.text((x1 + 48, 281), title, fill=DARK, font=font(TITLE_FONT, 24))
+        y = 360
+        for bullet in bullets:
+            draw.rounded_rectangle((x1 + 36, y + 8, x1 + 52, y + 24), radius=8, fill=accent)
+            draw.text((x1 + 68, y), bullet, fill=WHITE, font=font(BODY_FONT, 28))
+            y += 74
+        if index < len(columns) - 1:
+            arrow_x = x2 + 10
+            draw.line((arrow_x, 452, arrow_x + 26, 452), fill="#8F99AA", width=6)
+            draw.polygon([(arrow_x + 26, 452), (arrow_x + 10, 440), (arrow_x + 10, 464)], fill="#8F99AA")
+
+    card(draw, (92, 736, 1508, 820), SAND, 24)
+    draw.text((124, 763), "Outcome: one team setup, less prompt drift, faster onboarding, and repeatable Claude Code workflows.", fill=DARK, font=font(BODY_FONT, 30))
+
+    img.save(ASSETS / "workflow-overview.png")
+
+
+def render_variant_composition() -> None:
+    img = Image.new("RGB", (1600, 900), "#F5EFE3")
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (32, 32, 1568, 868), PAPER, 30)
+    draw.text((90, 92), "Compose Variants For Real Teams", fill=DARK, font=font(TITLE_FONT, 46))
+    draw.text(
+        (92, 146),
+        "Base starter first. Then apply one or more overlays in order. Later variants win on the same file path.",
+        fill="#5F6978",
+        font=font(BODY_FONT, 24),
+    )
+
+    card(draw, (92, 228, 460, 720), DARKER, 28, "#E8DECF", 2)
+    draw.text((126, 274), "Base starter", fill=WHITE, font=font(TITLE_FONT, 36))
+    for index, line in enumerate(["settings", "commands", "agents", "hooks", "mcp", "CLAUDE.md"]):
+        draw.text((132, 342 + index * 54), line, fill=SOFT, font=font(MONO_FONT, 28))
+
+    card(draw, (516, 228, 824, 446), SAND, 26)
+    draw.text((548, 272), "frontend", fill=DARK, font=font(TITLE_FONT, 34))
+    draw.text((548, 330), "/check-ui", fill=TEAL, font=font(MONO_FONT, 28))
+    draw.text((548, 372), "UI checks, a11y, states", fill="#5F6978", font=font(BODY_FONT, 24))
+
+    card(draw, (858, 228, 1166, 446), SAND, 26)
+    draw.text((890, 272), "consulting", fill=DARK, font=font(TITLE_FONT, 34))
+    draw.text((890, 330), "/client-update", fill=ROSE, font=font(MONO_FONT, 28))
+    draw.text((890, 372), "handoff and delivery notes", fill="#5F6978", font=font(BODY_FONT, 24))
+
+    card(draw, (1200, 228, 1508, 446), SAND, 26)
+    draw.text((1232, 272), "support-triage", fill=DARK, font=font(TITLE_FONT, 34))
+    draw.text((1232, 330), "/triage-ticket", fill=SEA, font=font(MONO_FONT, 28))
+    draw.text((1232, 372), "investigation workflows", fill="#5F6978", font=font(BODY_FONT, 24))
+
+    card(draw, (516, 498, 1508, 720), DARK, 28, "#E8DECF", 2)
+    draw.text((552, 544), "Install examples", fill=WHITE, font=font(TITLE_FONT, 34))
+    draw.text((552, 608), "$ node scripts/install.mjs ./repo --variant frontend", fill=GREEN, font=font(MONO_FONT, 24))
+    draw.text((552, 654), "$ node scripts/install.mjs ./repo --variant frontend --variant consulting", fill=GREEN, font=font(MONO_FONT, 24))
+    draw.text((552, 700), "$ node scripts/install.mjs ./repo --variant frontend,consulting", fill=GREEN, font=font(MONO_FONT, 24))
+
+    draw.line((460, 474, 516, 474), fill="#8F99AA", width=6)
+    draw.polygon([(516, 474), (498, 462), (498, 486)], fill="#8F99AA")
+    draw.text((92, 776), "Example: product agency team = base starter + frontend + consulting", fill=DARK, font=font(BODY_FONT, 32))
+
+    img.save(ASSETS / "variant-composition.png")
+
+
+def main() -> None:
+    ASSETS.mkdir(parents=True, exist_ok=True)
+    render_social_preview()
+    render_readme_preview()
+    render_workflow_overview()
+    render_variant_composition()
+    print("rendered assets")
+
+
+if __name__ == "__main__":
+    main()

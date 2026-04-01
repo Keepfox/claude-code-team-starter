@@ -74,10 +74,15 @@ Teams usually adopt this starter when they want:
 - subagents that encode common engineering roles
 - safer defaults for shells, secrets, and project files
 
+![Starter workflow overview](assets/workflow-overview.png)
+
 ## Visual Assets
 
 - README screenshot: `assets/readme-preview.png`
 - GitHub social preview image: `assets/social-preview.png`
+- workflow overview: `assets/workflow-overview.png`
+- variant composition preview: `assets/variant-composition.png`
+- regenerate all assets with `npm run render-assets`
 
 ## Quick Start
 
@@ -143,6 +148,8 @@ node scripts/install.mjs /path/to/your-project --variant frontend --variant cons
 ```
 
 See [docs/variants.md](docs/variants.md) for details.
+
+![Variant composition preview](assets/variant-composition.png)
 
 Quick references:
 
