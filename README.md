@@ -205,8 +205,10 @@ Start here:
 - [docs/public-launch-checklist.md](docs/public-launch-checklist.md)
 - [docs/adoption-playbook.md](docs/adoption-playbook.md)
 - [docs/publish.md](docs/publish.md)
+- [docs/roadmap.md](docs/roadmap.md)
 - [docs/use-cases.md](docs/use-cases.md)
 - [docs/variants.md](docs/variants.md)
+- [CHANGELOG.md](CHANGELOG.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Legal Note
