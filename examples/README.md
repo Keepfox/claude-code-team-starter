@@ -4,12 +4,16 @@ These files show how a short `CLAUDE.md` can look for different stacks without t
 
 Included examples:
 
+- `frontend/CLAUDE.md`
+- `internal-tooling/CLAUDE.md`
 - `node/CLAUDE.md`
 - `python/CLAUDE.md`
 - `go/CLAUDE.md`
 
 Suggested companions:
 
+- `frontend` example plus `.claude/skills/frontend-change-checklist/` and `posttool-frontend-quality-context.mjs`
+- `internal-tooling` example plus `.claude/skills/internal-tooling-checklist/` and `posttool-internal-tooling-context.mjs`
 - `node` example plus `.claude/skills/node-change-checklist/` and `posttool-node-quality-context.mjs`
 - `python` example plus `.claude/skills/python-change-checklist/` and `posttool-python-quality-context.mjs`
 - `go` example plus `.claude/skills/go-change-checklist/` and `posttool-go-quality-context.mjs`

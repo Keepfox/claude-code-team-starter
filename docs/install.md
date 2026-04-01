@@ -158,6 +158,6 @@ Then adapt:
 - `.claude/agents/` for your team roles
 - `.claude/hooks/` for your safety model
 - `.claude/hooks/recipes/` if you want optional hook patterns without enabling them globally on day one
-- `examples/` and `.claude/skills/` if you want a stack-specific memory plus checklist layer for Node, Python, or Go
+- `examples/` and `.claude/skills/` if you want a stack-specific or workflow-specific memory plus checklist layer for Node, Python, Go, frontend-heavy repos, or internal tools
 
 If you combine multiple variants, later variants win when they write the same file path.

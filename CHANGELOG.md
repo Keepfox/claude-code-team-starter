@@ -5,6 +5,7 @@
 - work toward the next release
 - added `data-python` and `admin-console` bundle presets for more real team shapes
 - added matching MCP example profiles for analytics repos and internal admin tools
+- added reusable frontend-heavy and internal-tooling layers for bundles that are not well served by generic Node guidance
 
 ## 0.3.0
 

@@ -87,7 +87,7 @@ Use `CLAUDE.md` for:
 
 If you want stack-specific guidance, start from one of the examples in `examples/` or install a variant first.
 
-For Node, Python, or Go repositories, pair the example `CLAUDE.md` with the matching stack skill and stack-specific post-edit hook recipe.
+For Node, Python, Go, frontend-heavy, or internal-tooling repositories, pair the example `CLAUDE.md` with the matching skill and post-edit hook recipe.
 
 If your repository has higher auth, compliance, or secret-handling risk, start from the `security` variant and tighten from there.
 

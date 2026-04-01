@@ -19,6 +19,7 @@ The recipes are for the next layer:
 - repos that need more startup context
 - teams that want a cleaner stop condition during merge work
 - stacks that need language-specific verification reminders
+- UI-heavy repos and internal tools that need workflow-specific reminders
 
 ## Included recipes
 
@@ -149,6 +150,60 @@ Suggested config:
           {
             "type": "command",
             "command": "node .claude/hooks/recipes/posttool-go-quality-context.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `posttool-frontend-quality-context.mjs`
+
+Use when:
+
+- the repo is UI-heavy
+- you want reminders around accessibility, responsive behavior, and changed user states
+
+Suggested config:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/recipes/posttool-frontend-quality-context.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `posttool-internal-tooling-context.mjs`
+
+Use when:
+
+- the repo powers admin screens, backoffice tools, or internal operator workflows
+- you want reminders around permissions, destructive actions, and operator-facing risk
+
+Suggested config:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/recipes/posttool-internal-tooling-context.mjs"
           }
         ]
       }

@@ -266,6 +266,8 @@ These are project-level agents, so your team can share a common workflow without
 ## Included Skills
 
 - `release-checklist`
+- `frontend-change-checklist`
+- `internal-tooling-checklist`
 - `node-change-checklist`
 - `python-change-checklist`
 - `go-change-checklist`

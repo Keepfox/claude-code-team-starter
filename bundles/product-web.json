@@ -9,12 +9,12 @@
     "team-onboarding",
     "release-delivery"
   ],
-  "recommendedClaudeExample": "examples/node/CLAUDE.md",
+  "recommendedClaudeExample": "examples/frontend/CLAUDE.md",
   "recommendedSkills": [
-    "node-change-checklist",
+    "frontend-change-checklist",
     "release-checklist"
   ],
   "recommendedHookRecipes": [
-    "posttool-node-quality-context.mjs"
+    "posttool-frontend-quality-context.mjs"
   ]
 }

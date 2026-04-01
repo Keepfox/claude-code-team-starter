@@ -20,7 +20,7 @@ Use it when you want to answer:
 | Base subagents | Included | `.claude/agents/` | Shared reviewer, debugger, docs, test, release, and security roles |
 | Base hooks | Included | `.claude/hooks/` | Sensitive-file protection, shell safety, and session context |
 | Hook recipe library | Included | `.claude/hooks/recipes/` and `docs/hook-recipes.md` | Optional copy-paste recipes for infra, quality, startup context, and merge hygiene |
-| Starter skill examples | Included | `.claude/skills/` | Small reusable skill patterns, including stack-specific checklists |
+| Starter skill examples | Included | `.claude/skills/` | Small reusable skill patterns, including stack-specific and workflow-specific checklists |
 | Minimal MCP file | Included | `.mcp.json` | Safe empty project-scoped entrypoint |
 | Install helper | Included | `scripts/install.mjs` | Copies the base starter and optional variants |
 | Bundle presets | Included | `bundles/` and `docs/bundles.md` | Named install presets for common team shapes, including stack-aware bundle guidance |
@@ -47,7 +47,7 @@ These are shipped as examples, not as fully wired production defaults.
 | Area | Status | Where | Notes |
 | --- | --- | --- | --- |
 | MCP profiles | Example only | `mcp/examples/` | Starting points for onboarding, security, release, issue triage, and GitHub plus Postgres |
-| Example stacks | Example only | `examples/` | Short adaptation references that pair with stack-specific skills and hook recipes |
+| Example stacks | Example only | `examples/` | Short adaptation references that pair with stack-specific or workflow-specific skills and hook recipes |
 | Local-only settings | Optional | `.claude/settings.local.json` | Personal machine overrides; do not commit |
 | Multi-variant overlays | Optional | `scripts/install.mjs --variant ...` | Later variants win when they write the same path |
 | Bundle plus extra variant | Optional | `scripts/install.mjs --bundle ... --variant ...` | Start from a preset, then specialize it with one more overlay |
@@ -58,7 +58,7 @@ These are shipped as examples, not as fully wired production defaults.
 These are reasonable next steps for the repo, but they are not fully shipped yet.
 
 - more copy-paste onboarding bundles for common team setups
-- richer stack-specific skills and hooks beyond the current Node, Python, and Go examples
+- richer stack-specific and workflow-specific skills and hooks beyond the current Node, Python, Go, frontend, and internal tooling examples
 - short terminal captures or GIFs for first-run flow
 - stronger scenario bundles for common team shapes
 

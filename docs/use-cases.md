@@ -35,6 +35,12 @@ Recommended bundle:
 
 - `product-web`
 
+Suggested reusable layer:
+
+- `examples/frontend/CLAUDE.md`
+- `frontend-change-checklist`
+- `posttool-frontend-quality-context.mjs`
+
 ## 3. Support and incident triage
 
 Use this starter as a base for:
@@ -81,6 +87,12 @@ Best extension:
 Recommended bundle:
 
 - `product-web`
+
+Suggested reusable layer:
+
+- `examples/frontend/CLAUDE.md`
+- `frontend-change-checklist`
+- `posttool-frontend-quality-context.mjs`
 
 ## 6. Data team
 
@@ -187,3 +199,9 @@ Recommended bundle:
 Matching MCP profile:
 
 - `mcp/examples/internal-admin.json`
+
+Suggested reusable layer:
+
+- `examples/internal-tooling/CLAUDE.md`
+- `internal-tooling-checklist`
+- `posttool-internal-tooling-context.mjs`

@@ -18,6 +18,10 @@ Included recipes:
   Add Python-specific verification reminders after edits.
 - `posttool-go-quality-context.mjs`
   Add Go-specific verification reminders after edits.
+- `posttool-frontend-quality-context.mjs`
+  Add UI-specific reminders around states, responsive behavior, and accessibility.
+- `posttool-internal-tooling-context.mjs`
+  Add internal-tooling reminders around permissions, destructive actions, and operator risk.
 - `sessionstart-project-brief.mjs`
   Load extra startup context from `.claude/project-brief.md` when that file exists.
 - `stop-clean-merge-state.mjs`

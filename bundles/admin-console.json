@@ -11,13 +11,13 @@
     "security-review",
     "release-delivery"
   ],
-  "recommendedClaudeExample": "examples/node/CLAUDE.md",
+  "recommendedClaudeExample": "examples/internal-tooling/CLAUDE.md",
   "recommendedSkills": [
-    "node-change-checklist",
+    "internal-tooling-checklist",
     "release-checklist"
   ],
   "recommendedHookRecipes": [
-    "posttool-node-quality-context.mjs",
+    "posttool-internal-tooling-context.mjs",
     "pretool-protect-infra.mjs"
   ]
 }

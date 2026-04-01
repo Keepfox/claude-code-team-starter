@@ -20,8 +20,8 @@ Use raw variants when:
 
 | Bundle | Variants | Stack layer | Recommended MCP profiles | Good fit |
 | --- | --- | --- | --- | --- |
-| `admin-console` | `frontend`, `security`, `release-engineering` | Node example, Node checklist, Node post-edit recipe, infra-protection recipe | `internal-admin`, `security-review`, `release-delivery` | Internal admin tools, operator dashboards, and auth-sensitive web consoles |
-| `product-web` | `frontend`, `release-engineering` | Node example, Node checklist, Node post-edit recipe | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
+| `admin-console` | `frontend`, `security`, `release-engineering` | Internal-tooling example, internal-tooling checklist, internal-tooling post-edit recipe, infra-protection recipe | `internal-admin`, `security-review`, `release-delivery` | Internal admin tools, operator dashboards, and auth-sensitive web consoles |
+| `product-web` | `frontend`, `release-engineering` | Frontend example, frontend checklist, frontend post-edit recipe | `team-onboarding`, `release-delivery` | Small product teams shipping UI changes with staged rollout checks |
 | `platform-api` | `backend`, `security`, `release-engineering` | Release checklist, infra-protection recipe | `github-postgres`, `security-review`, `release-delivery` | Service, platform, and infrastructure teams |
 | `client-delivery` | `consulting`, `release-engineering` | Release checklist | `team-onboarding`, `release-delivery` | Consulting teams doing scoped delivery and handoff |
 | `data-python` | `data`, `release-engineering` | Python example, Python checklist, Python post-edit recipe | `data-warehouse`, `release-delivery` | Python-heavy analytics, ETL, and warehouse-facing repositories |
