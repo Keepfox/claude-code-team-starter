@@ -62,6 +62,7 @@ This starter is a good fit if you want to standardize Claude Code usage across:
 - small engineering teams
 - internal platform teams
 - client delivery teams
+- security-sensitive services and internal tools
 - MCP-heavy repositories with shared tooling
 
 ## Why Teams Use This
@@ -133,6 +134,7 @@ This starter also includes overlay variants for common working styles:
 - `consulting`
 - `data`
 - `frontend`
+- `security`
 - `support-triage`
 
 Apply a variant during install:

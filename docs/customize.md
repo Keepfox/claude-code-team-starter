@@ -69,4 +69,6 @@ Use `CLAUDE.md` for:
 
 If you want stack-specific guidance, start from one of the examples in `examples/` or install a variant first.
 
+If your repository has higher auth, compliance, or secret-handling risk, start from the `security` variant and tighten from there.
+
 Do not turn it into a giant policy document no one will maintain.

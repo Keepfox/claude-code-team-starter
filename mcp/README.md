@@ -90,5 +90,6 @@ Keep the first version small. Two or three useful servers beat ten half-working 
 
 - [examples/github-postgres.json](examples/github-postgres.json)
 - [examples/issue-triage.json](examples/issue-triage.json)
+- [examples/security-review.json](examples/security-review.json)
 
 Use these as starting points, not production-ready drop-ins.

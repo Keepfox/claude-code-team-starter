@@ -78,6 +78,20 @@ Adds:
 - data-oriented `CLAUDE.md`
 - `/check-data` command
 
+### `security`
+
+Best for:
+
+- auth-heavy services
+- internal admin tools
+- sensitive workflows involving secrets or trust boundaries
+- teams that want explicit threat-model reviews before release
+
+Adds:
+
+- security-oriented `CLAUDE.md`
+- `/threat-model` command
+
 ## Install examples
 
 Base starter only:

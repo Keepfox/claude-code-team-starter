@@ -97,3 +97,18 @@ Best extensions:
 - `backend` for service repos
 - `frontend` for UI repos
 - `data` for analytics or warehouse repos
+
+## 8. Security-sensitive service
+
+Use this starter to standardize:
+
+- security review language
+- threat-model style analysis
+- safer auth and secret-handling checks
+- release notes that call out residual risk
+
+Best extensions:
+
+- the `security` variant
+- GitHub and docs MCP
+- error tracking MCP for incident review
