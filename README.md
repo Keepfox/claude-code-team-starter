@@ -1,4 +1,7 @@
-# Claude Code Team Starter
+# Claude Code Team Starter Template
+
+[![validate](https://github.com/Keepfox/claude-code-team-starter/actions/workflows/validate.yml/badge.svg)](https://github.com/Keepfox/claude-code-team-starter/actions/workflows/validate.yml)
+[![license](https://img.shields.io/github/license/Keepfox/claude-code-team-starter)](LICENSE)
 
 Safe, team-friendly starter repo for running real work with Claude Code.
 
