@@ -2,13 +2,20 @@
 
 ## Unreleased
 
-- work toward `v0.3.0`
-- added capability matrix and config-layer docs
-- added bundle presets and installer support for common team shapes
-- added hook recipe library for safer repo-specific automation
-- added install and first-run terminal demo assets for README and onboarding docs
-- added stack-specific skills and hook recipes for Node, Python, and Go repositories
-- added stack-aware bundle presets and installer guidance for Node, Python, and Go services
+- work toward the next release
+
+## 0.3.0
+
+Released on April 1, 2026.
+
+Included:
+
+- capability matrix and config-layer docs so teams can place settings, MCP config, and local overrides more predictably
+- named bundle presets for common team shapes, plus stack-aware bundles for `Node`, `Python`, and `Go` services
+- hook recipe library for optional repo-specific automation without changing the base starter defaults
+- stack-specific reusable skills and post-edit hook recipes for `Node`, `Python`, and `Go`
+- install and first-run terminal demo assets for README and onboarding flow
+- richer installer guidance that now points to matching MCP profiles, `CLAUDE.md` examples, skills, and hook recipes after bundle selection
 
 ## 0.2.0
 
