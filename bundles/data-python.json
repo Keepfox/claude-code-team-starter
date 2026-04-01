@@ -1,0 +1,20 @@
+{
+  "name": "data-python",
+  "description": "Data review and release workflows for Python-heavy analytics or pipeline repositories.",
+  "variants": [
+    "data",
+    "release-engineering"
+  ],
+  "recommendedMcpProfiles": [
+    "github-postgres",
+    "release-delivery"
+  ],
+  "recommendedClaudeExample": "examples/python/CLAUDE.md",
+  "recommendedSkills": [
+    "python-change-checklist",
+    "release-checklist"
+  ],
+  "recommendedHookRecipes": [
+    "posttool-python-quality-context.mjs"
+  ]
+}

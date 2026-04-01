@@ -4,8 +4,7 @@
 
 - add more stack-specific skills and hooks on top of the starter base
 - expand terminal captures and walkthrough GIFs for install and first-run flows
-- prepare a `v0.3.0` release around starter bundles and richer docs
-- turn the capability matrix into stronger copy-paste bundles and starter presets
+- turn the capability matrix into even stronger copy-paste bundles and starter presets
 - expand the first bundle set with more team shapes and stronger MCP plus stack guidance
 - expand the hook recipe library with more stack-specific examples beyond Node, Python, and Go
 

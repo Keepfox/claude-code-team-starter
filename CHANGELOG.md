@@ -3,6 +3,7 @@
 ## Unreleased
 
 - work toward the next release
+- added `data-python` and `admin-console` bundle presets for more real team shapes
 
 ## 0.3.0
 

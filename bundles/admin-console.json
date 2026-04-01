@@ -1,0 +1,23 @@
+{
+  "name": "admin-console",
+  "description": "Security-aware rollout for internal web tools, admin panels, and operator dashboards.",
+  "variants": [
+    "frontend",
+    "security",
+    "release-engineering"
+  ],
+  "recommendedMcpProfiles": [
+    "team-onboarding",
+    "security-review",
+    "release-delivery"
+  ],
+  "recommendedClaudeExample": "examples/node/CLAUDE.md",
+  "recommendedSkills": [
+    "node-change-checklist",
+    "release-checklist"
+  ],
+  "recommendedHookRecipes": [
+    "posttool-node-quality-context.mjs",
+    "pretool-protect-infra.mjs"
+  ]
+}

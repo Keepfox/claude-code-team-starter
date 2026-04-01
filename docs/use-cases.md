@@ -31,6 +31,10 @@ Good first MCP additions:
 - Postgres
 - docs search
 
+Recommended bundle:
+
+- `product-web`
+
 ## 3. Support and incident triage
 
 Use this starter as a base for:
@@ -57,6 +61,10 @@ Use this starter to package organization-wide defaults:
 
 Then create stack-specific overlays on top.
 
+Recommended bundle:
+
+- `platform-api`
+
 ## 5. Frontend team
 
 Use this starter to standardize:
@@ -70,6 +78,10 @@ Best extension:
 
 - the `frontend` variant
 
+Recommended bundle:
+
+- `product-web`
+
 ## 6. Data team
 
 Use this starter to standardize:
@@ -82,6 +94,10 @@ Use this starter to standardize:
 Best extension:
 
 - the `data` variant
+
+Recommended bundle:
+
+- `data-python`
 
 ## 7. Shared engineering enablement repo
 
@@ -113,6 +129,10 @@ Best extensions:
 - GitHub and docs MCP
 - error tracking MCP for incident review
 
+Recommended bundle:
+
+- `python-service` or `platform-api`
+
 ## 9. Release engineering or delivery team
 
 Use this starter to standardize:
@@ -126,6 +146,11 @@ Best extensions:
 
 - the `release-engineering` variant
 - GitHub, docs, errors, and deploy control MCP
+
+Recommended bundles:
+
+- `platform-api`
+- `client-delivery`
 
 ## 10. New team member onboarding
 
@@ -141,3 +166,16 @@ Best extensions:
 - `mcp/examples/team-onboarding.json`
 - `/check-setup`
 - `/review`
+
+## 11. Internal admin tool or operator console
+
+Use this starter to standardize:
+
+- security-aware UI review
+- auth and permission-sensitive release checks
+- safer rollout notes for internal operators
+- common MCP access for code, docs, and release coordination
+
+Recommended bundle:
+
+- `admin-console`

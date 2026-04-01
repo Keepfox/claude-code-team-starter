@@ -61,6 +61,13 @@ Install with a stack-aware bundle:
 node scripts/install.mjs /path/to/your-project --bundle node-service
 ```
 
+Other useful bundle entrypoints:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle data-python
+node scripts/install.mjs /path/to/your-project --bundle admin-console
+```
+
 Install with multiple variants:
 
 ```bash

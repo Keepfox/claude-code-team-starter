@@ -191,6 +191,8 @@ Stack-aware bundle examples:
 node scripts/install.mjs /path/to/your-project --bundle node-service
 node scripts/install.mjs /path/to/your-project --bundle python-service
 node scripts/install.mjs /path/to/your-project --bundle go-service
+node scripts/install.mjs /path/to/your-project --bundle data-python
+node scripts/install.mjs /path/to/your-project --bundle admin-console
 ```
 
 ## Variant Packs
