@@ -85,6 +85,12 @@ Show script help:
 npm run install-help
 ```
 
+## Install preview
+
+This is the intended shape of a successful starter install:
+
+![Install demo](../assets/install-demo.png)
+
 ## First-run smoke check
 
 After copying the files into your project:
@@ -96,6 +102,14 @@ After copying the files into your project:
 5. Run `/agents`.
 6. Run `/mcp`.
 7. Review `.claude/settings.json` before making broader permissions changes.
+
+Visual reference:
+
+![First-run demo](../assets/first-run-demo.png)
+
+Quick animated walkthrough:
+
+![Terminal walkthrough](../assets/terminal-demo.gif)
 
 ## Recommended onboarding path
 

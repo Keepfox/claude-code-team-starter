@@ -85,6 +85,9 @@ Teams usually adopt this starter when they want:
 - workflow overview: `assets/workflow-overview.png`
 - variant composition preview: `assets/variant-composition.png`
 - onboarding path preview: `assets/onboarding-path.png`
+- install demo screenshot: `assets/install-demo.png`
+- first-run demo screenshot: `assets/first-run-demo.png`
+- terminal demo GIF: `assets/terminal-demo.gif`
 - regenerate all assets with `npm run render-assets`
 
 ## Quick Start
@@ -114,6 +117,10 @@ For more install patterns and first-run checks:
 - [docs/install.md](docs/install.md)
 - [examples/README.md](examples/README.md)
 
+### Install Demo
+
+![Starter install demo](assets/install-demo.png)
+
 3. Open your project and start Claude Code.
 
 ```bash
@@ -128,6 +135,14 @@ claude
 - Run `/agents` to see the project subagents
 - Run `/mcp` to inspect MCP connections
 - Open `.claude/settings.json` and adjust permissions for your stack
+
+### First-Run Demo
+
+![Starter first-run demo](assets/first-run-demo.png)
+
+### Terminal Walkthrough
+
+![Starter terminal walkthrough](assets/terminal-demo.gif)
 
 ## Fast Onboarding
 

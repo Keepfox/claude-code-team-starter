@@ -44,6 +44,26 @@ def traffic_lights(draw: ImageDraw.ImageDraw, x: int, y: int) -> None:
         draw.ellipse((offset, y, offset + 16, y + 16), fill=color)
 
 
+def terminal_window(img: Image.Image, title: str, subtitle: str, lines, accent: str) -> None:
+    draw = ImageDraw.Draw(img)
+
+    card(draw, (28, 28, img.width - 28, img.height - 28), PAPER, 30)
+    draw.text((84, 82), title, fill=DARK, font=font(TITLE_FONT, 44))
+    draw.text((86, 136), subtitle, fill="#5F6978", font=font(BODY_FONT, 24))
+
+    card(draw, (84, 220, img.width - 84, img.height - 108), TERMINAL, 28, STROKE, 2)
+    traffic_lights(draw, 114, 254)
+    draw.text((208, 248), "terminal demo", fill=SOFT, font=font(MONO_FONT, 20))
+
+    y = 330
+    for text, color, size in lines:
+        draw.text((122, y), text, fill=color, font=font(MONO_FONT, size))
+        y += 54 if size >= 24 else 38
+
+    card(draw, (86, img.height - 82, 430, img.height - 42), accent, 20)
+    draw.text((112, img.height - 72), "claude-code-team-starter", fill=DARK, font=font(TITLE_FONT, 22))
+
+
 def render_social_preview() -> None:
     img = Image.new("RGB", (1280, 640), CREAM)
     draw = ImageDraw.Draw(img)
@@ -297,6 +317,113 @@ def render_onboarding_path() -> None:
     img.save(ASSETS / "onboarding-path.png")
 
 
+def render_install_demo() -> None:
+    img = Image.new("RGB", (1600, 900), "#F5EFE3")
+    lines = [
+        ("$ node scripts/install.mjs ./demo-repo --bundle platform-api", GREEN, 24),
+        ("copied .claude/settings.json", WHITE, 21),
+        ("copied .claude/commands/check-api.md", WHITE, 21),
+        ("copied .claude/commands/threat-model.md", WHITE, 21),
+        ("copied .claude/commands/release-readiness.md", WHITE, 21),
+        ("bundles: platform-api", BLUE, 21),
+        ("variants: backend, security, release-engineering", BLUE, 21),
+        ("recommended mcp profiles: github-postgres, security-review, release-delivery", MUTED, 18),
+        ("install complete: 33 files", GREEN, 22),
+    ]
+    terminal_window(
+        img,
+        "Install In One Command",
+        "Named bundles turn the starter into a faster rollout path for real team shapes.",
+        lines,
+        ORANGE,
+    )
+    img.save(ASSETS / "install-demo.png")
+
+
+def render_first_run_demo() -> None:
+    img = Image.new("RGB", (1600, 900), "#F5EFE3")
+    lines = [
+        ("$ claude", GREEN, 24),
+        ("/help", BLUE, 22),
+        ("/check-setup", BLUE, 22),
+        ("starter files: ok", WHITE, 20),
+        ("commands found: 9", WHITE, 20),
+        ("agents found: 6", WHITE, 20),
+        ("mcp placeholders still need real env vars", YELLOW, 20),
+        ("/mcp", BLUE, 22),
+        ("team-onboarding  connected", WHITE, 20),
+        ("github-postgres pending env wiring", MUTED, 20),
+    ]
+    terminal_window(
+        img,
+        "First Run Stays Predictable",
+        "The base session starts narrow: inspect commands, run the setup audit, then verify MCP.",
+        lines,
+        GREEN,
+    )
+    img.save(ASSETS / "first-run-demo.png")
+
+
+def render_terminal_demo_gif() -> None:
+    frames = []
+    frame_specs = [
+        (
+            "Step 1: Install",
+            "Install with a bundle or a small set of variants.",
+            [
+                ("$ node scripts/install.mjs ./demo-repo --bundle product-web", GREEN, 22),
+                ("copied .claude/settings.json", WHITE, 19),
+                ("copied .claude/commands/check-ui.md", WHITE, 19),
+                ("copied .claude/commands/release-readiness.md", WHITE, 19),
+                ("bundles: product-web", BLUE, 19),
+                ("variants: frontend, release-engineering", BLUE, 19),
+                ("install complete: 32 files", GREEN, 21),
+            ],
+            ORANGE,
+        ),
+        (
+            "Step 2: Start Claude",
+            "Open the repo and begin with a small first session.",
+            [
+                ("$ claude", GREEN, 22),
+                ("/help", BLUE, 20),
+                ("/agents", BLUE, 20),
+                ("/check-setup", BLUE, 20),
+                ("starter files: ok", WHITE, 19),
+                ("agents found: 6", WHITE, 19),
+                ("gitignore safety: ok", WHITE, 19),
+            ],
+            YELLOW,
+        ),
+        (
+            "Step 3: Connect MCP",
+            "Wire one small MCP profile before adding broader access.",
+            [
+                ("/mcp", BLUE, 20),
+                ("team-onboarding connected", WHITE, 19),
+                ("github-postgres pending env wiring", MUTED, 19),
+                ("release-delivery not enabled", MUTED, 19),
+                ("next step: review harmless diff", GREEN, 20),
+            ],
+            GREEN,
+        ),
+    ]
+
+    for title, subtitle, lines, accent in frame_specs:
+        frame = Image.new("RGB", (1280, 720), "#F5EFE3")
+        terminal_window(frame, title, subtitle, lines, accent)
+        frames.append(frame)
+
+    frames[0].save(
+        ASSETS / "terminal-demo.gif",
+        save_all=True,
+        append_images=frames[1:],
+        duration=[1100, 1100, 1400],
+        loop=0,
+        optimize=False,
+    )
+
+
 def main() -> None:
     ASSETS.mkdir(parents=True, exist_ok=True)
     render_social_preview()
@@ -304,6 +431,9 @@ def main() -> None:
     render_workflow_overview()
     render_variant_composition()
     render_onboarding_path()
+    render_install_demo()
+    render_first_run_demo()
+    render_terminal_demo_gif()
     print("rendered assets")
 
 

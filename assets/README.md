@@ -9,6 +9,9 @@ Included images:
 - `workflow-overview.png`
 - `variant-composition.png`
 - `onboarding-path.png`
+- `install-demo.png`
+- `first-run-demo.png`
+- `terminal-demo.gif`
 
 To regenerate them:
 

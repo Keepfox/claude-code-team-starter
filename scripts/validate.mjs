@@ -94,7 +94,10 @@ for (const file of [
   "assets/social-preview.png",
   "assets/workflow-overview.png",
   "assets/variant-composition.png",
-  "assets/onboarding-path.png"
+  "assets/onboarding-path.png",
+  "assets/install-demo.png",
+  "assets/first-run-demo.png",
+  "assets/terminal-demo.gif"
 ]) {
   if (!existsSync(join(root, file))) {
     throw new Error(`missing required asset: ${file}`);
