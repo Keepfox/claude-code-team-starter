@@ -52,12 +52,15 @@ Good hook use cases:
 - ask before destructive shell commands
 - add startup context
 - run formatters or validators in known repos
+- add repo-specific guardrails with small reviewable recipes
 
 Avoid:
 
 - networked hooks that exfiltrate data
 - long-running hooks
 - hooks that assume one language stack unless this repo is stack-specific
+
+Start from [hook-recipes.md](hook-recipes.md) if you want to add workflow-aware hooks without designing them from scratch.
 
 ## 6. Add MCP by scope
 

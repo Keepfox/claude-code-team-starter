@@ -1,0 +1,12 @@
+{
+  "name": "product-web",
+  "description": "Frontend and delivery workflows for a small product team shipping user-facing changes.",
+  "variants": [
+    "frontend",
+    "release-engineering"
+  ],
+  "recommendedMcpProfiles": [
+    "team-onboarding",
+    "release-delivery"
+  ]
+}

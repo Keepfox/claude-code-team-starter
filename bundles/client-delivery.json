@@ -1,0 +1,12 @@
+{
+  "name": "client-delivery",
+  "description": "Consulting-oriented rollout for client work with handoff and release guidance.",
+  "variants": [
+    "consulting",
+    "release-engineering"
+  ],
+  "recommendedMcpProfiles": [
+    "team-onboarding",
+    "release-delivery"
+  ]
+}

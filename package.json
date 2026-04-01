@@ -6,6 +6,7 @@
   "scripts": {
     "install-starter": "node scripts/install.mjs",
     "list-variants": "node scripts/install.mjs --list-variants",
+    "list-bundles": "node scripts/install.mjs --list-bundles",
     "install-help": "node scripts/install.mjs --help",
     "render-assets": "python3 scripts/render_assets.py",
     "validate": "node scripts/validate.mjs"

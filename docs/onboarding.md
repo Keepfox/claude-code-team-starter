@@ -19,6 +19,8 @@ node scripts/install.mjs /path/to/your-project
 
 Use the base starter first. Do not add variants on the first pass unless the repo already has a clear team convention for them.
 
+If the repo obviously fits one of the bundle presets, you can start from `docs/bundles.md` instead of building the install from scratch.
+
 ## 2. Start with one small MCP profile
 
 For most teams, begin with:
@@ -119,4 +121,5 @@ Day 2:
 Day 3+:
 
 - add one variant if the repo clearly needs it
+- enable one small hook recipe if the repo needs tighter guardrails
 - add operational MCP servers only after the baseline works

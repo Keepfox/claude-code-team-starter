@@ -1,0 +1,14 @@
+{
+  "name": "platform-api",
+  "description": "Backend, security, and release workflows for service or platform teams.",
+  "variants": [
+    "backend",
+    "security",
+    "release-engineering"
+  ],
+  "recommendedMcpProfiles": [
+    "github-postgres",
+    "security-review",
+    "release-delivery"
+  ]
+}

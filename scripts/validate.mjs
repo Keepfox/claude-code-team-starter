@@ -10,10 +10,11 @@ const jsonFiles = [
   ".claude/settings.local.example.json",
   ".mcp.json",
   "package.json",
-  ...listFiles("mcp/examples").filter((file) => file.endsWith(".json"))
+  ...listFiles("mcp/examples").filter((file) => file.endsWith(".json")),
+  ...listFiles("bundles").filter((file) => file.endsWith(".json"))
 ];
 
-const hookFiles = listFiles(".claude/hooks").filter((file) => file.endsWith(".mjs"));
+const hookFiles = listFilesRecursive(".claude/hooks").filter((file) => file.endsWith(".mjs"));
 const claudeScriptFiles = listFiles(".claude/scripts").filter((file) => file.endsWith(".mjs"));
 const scriptFiles = listFiles("scripts").filter((file) => file.endsWith(".mjs"));
 const agentFiles = listFiles(".claude/agents").filter((file) => file.endsWith(".md"));
@@ -68,9 +69,20 @@ const variants = execFileSync("node", ["scripts/install.mjs", "--list-variants"]
   .map((line) => line.trim())
   .filter(Boolean);
 
+const bundles = execFileSync("node", ["scripts/install.mjs", "--list-bundles"], {
+  cwd: root,
+  encoding: "utf8"
+})
+  .split("\n")
+  .map((line) => line.trim())
+  .filter(Boolean);
+
 smokeInstall([]);
 for (const variant of variants) {
   smokeInstall(["--variant", variant]);
+}
+for (const bundle of bundles) {
+  smokeInstall(["--bundle", bundle]);
 }
 if (variants.length >= 2) {
   smokeInstall(["--variant", variants[0], "--variant", variants[1]]);

@@ -1,0 +1,12 @@
+{
+  "name": "support-response",
+  "description": "Support, issue triage, and security review workflows for incident-heavy teams.",
+  "variants": [
+    "support-triage",
+    "security"
+  ],
+  "recommendedMcpProfiles": [
+    "issue-triage",
+    "security-review"
+  ]
+}

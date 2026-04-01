@@ -49,6 +49,12 @@ Install with a variant:
 node scripts/install.mjs /path/to/your-project --variant frontend
 ```
 
+Install with a bundle:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle product-web
+```
+
 Install with multiple variants:
 
 ```bash
@@ -65,6 +71,12 @@ Show supported variants:
 
 ```bash
 node scripts/install.mjs --list-variants
+```
+
+Show supported bundles:
+
+```bash
+node scripts/install.mjs --list-bundles
 ```
 
 Show script help:
@@ -97,6 +109,8 @@ For a new team member or a fresh repo rollout:
 
 If you want the full first-week flow, use [docs/onboarding.md](onboarding.md).
 
+If your team shape is already clear, start from [docs/bundles.md](bundles.md) before choosing variants one by one.
+
 ## Recommended first edits
 
 Change these first:
@@ -112,5 +126,6 @@ Then adapt:
 - `.claude/commands/` for your workflow
 - `.claude/agents/` for your team roles
 - `.claude/hooks/` for your safety model
+- `.claude/hooks/recipes/` if you want optional hook patterns without enabling them globally on day one
 
 If you combine multiple variants, later variants win when they write the same file path.

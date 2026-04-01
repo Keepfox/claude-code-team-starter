@@ -149,9 +149,26 @@ Use the full walkthrough here:
 This starter is opinionated about what is included, what is optional, and what is outside the repo's scope.
 
 - [docs/capabilities.md](docs/capabilities.md)
+- [docs/bundles.md](docs/bundles.md)
 - [docs/config-layers.md](docs/config-layers.md)
+- [docs/hook-recipes.md](docs/hook-recipes.md)
 
 Use these before deciding whether a change belongs in `CLAUDE.md`, `.claude/settings.json`, `.claude/settings.local.json`, or `.mcp.json`.
+
+## Bundle Presets
+
+If your team shape is obvious, start from a named bundle instead of choosing every variant by hand.
+
+Example:
+
+```bash
+node scripts/install.mjs /path/to/your-project --bundle platform-api
+```
+
+Quick references:
+
+- bundle guide: [docs/bundles.md](docs/bundles.md)
+- available bundles: `npm run list-bundles`
 
 ## Variant Packs
 
@@ -184,7 +201,9 @@ See [docs/variants.md](docs/variants.md) for details.
 Quick references:
 
 - variant map: [variants/README.md](variants/README.md)
+- bundle guide: [docs/bundles.md](docs/bundles.md)
 - install flags: `npm run install-help`
+- available bundles: `npm run list-bundles`
 - available variants: `npm run list-variants`
 
 ## Included Commands
@@ -236,6 +255,8 @@ This starter ships with conservative defaults:
 - disables `Co-Authored-By Claude` by default
 
 You should still review and tailor the rules for your environment.
+
+If you need stronger repo-specific automation without enabling it by default, start from [docs/hook-recipes.md](docs/hook-recipes.md).
 
 ## MCP
 
@@ -299,6 +320,7 @@ For a consultancy or internal platform team, this can become the base for:
 Start here:
 
 - [docs/capabilities.md](docs/capabilities.md)
+- [docs/bundles.md](docs/bundles.md)
 - [docs/config-layers.md](docs/config-layers.md)
 - [docs/install.md](docs/install.md)
 - [docs/onboarding.md](docs/onboarding.md)

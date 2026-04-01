@@ -4,6 +4,8 @@
 
 - work toward `v0.3.0`
 - added capability matrix and config-layer docs
+- added bundle presets and installer support for common team shapes
+- added hook recipe library for safer repo-specific automation
 
 ## 0.2.0
 

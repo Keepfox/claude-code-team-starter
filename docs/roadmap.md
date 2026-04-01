@@ -4,9 +4,10 @@
 
 - add more stack-specific skills and hooks on top of the starter base
 - publish short terminal captures or GIFs for install and first-run flows
-- add copy-paste onboarding bundles for the most common team setups
 - prepare a `v0.3.0` release around starter bundles and richer docs
 - turn the capability matrix into stronger copy-paste bundles and starter presets
+- expand the first bundle set with more team shapes and stronger MCP recommendations
+- expand the hook recipe library with more stack-specific examples
 
 ## Mid-term
 
