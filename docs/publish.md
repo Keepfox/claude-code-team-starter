@@ -36,11 +36,22 @@ git push -u origin main
 ## Recommended GitHub settings after push
 
 - add a repository description
-- add topics such as `claude-code`, `mcp`, `developer-tools`, `ai-workflows`
+- add topics such as `claude-code`, `claude-code-starter`, `mcp`, `subagents`, `slash-commands`, `developer-tools`, `ai-workflows`
 - enable Issues
 - enable Discussions if you want community feedback
 - keep the default branch as `main`
 
 ## Recommended first description
 
-Safe, team-friendly starter repo for Claude Code with shared commands, subagents, hooks, skills, and MCP examples.
+Claude Code starter template with shared commands, subagents, hooks, skills, and MCP examples for team workflows.
+
+## Suggested topics
+
+- `claude-code`
+- `claude-code-starter`
+- `mcp`
+- `model-context-protocol`
+- `subagents`
+- `slash-commands`
+- `developer-tools`
+- `ai-workflows`

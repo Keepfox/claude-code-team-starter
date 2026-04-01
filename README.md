@@ -2,6 +2,8 @@
 
 Safe, team-friendly starter repo for running real work with Claude Code.
 
+Claude Code starter template for teams that want shared MCP setup, project slash commands, subagents, hooks, and a maintainable `CLAUDE.md`.
+
 This repository gives you a practical baseline for:
 
 - shared project settings in `.claude/settings.json`
@@ -11,6 +13,15 @@ This repository gives you a practical baseline for:
 - deterministic safety hooks in `.claude/hooks/`
 - MCP examples in `.mcp.json` and `mcp/`
 - a starter `CLAUDE.md` for team conventions
+
+Keywords people usually search for:
+
+- Claude Code starter
+- Claude Code template
+- Claude Code MCP setup
+- Claude Code subagents
+- Claude Code slash commands
+- Claude Code hooks
 
 This repo is designed for teams that want a public, understandable starting point instead of a private collection of prompts and ad hoc local settings.
 
@@ -26,6 +37,8 @@ It is a clean starter template built around Claude Code's official extension poi
 - hooks
 - MCP configuration
 - project memory in `CLAUDE.md`
+
+If you are searching for a reusable Claude Code template with MCP examples, shared commands, subagents, and safer defaults for team workflows, this is that baseline.
 
 Official docs:
 
@@ -45,6 +58,16 @@ This starter is a good fit if you want to standardize Claude Code usage across:
 - internal platform teams
 - client delivery teams
 - MCP-heavy repositories with shared tooling
+
+## Why Teams Use This
+
+Teams usually adopt this starter when they want:
+
+- one shared Claude Code setup instead of per-developer local drift
+- a repeatable MCP baseline for GitHub, Postgres, docs, and internal tools
+- reusable slash commands for review, planning, release, and incident work
+- subagents that encode common engineering roles
+- safer defaults for shells, secrets, and project files
 
 ## Quick Start
 
